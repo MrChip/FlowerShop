@@ -1,0 +1,536 @@
+/* product desc */
+/* primary_block ***************************************************************************** */
+#primary_block {
+
+	
+}
+
+/* pb-right-column ***************************************************************************** */
+.alld_product {
+	text-align: center;
+}
+#pb-right-column {
+}
+
+#pb-right-column #image-block {
+	position:relative;
+}
+
+#pb-right-column #image-block img {
+	border:1px solid #DEDEDE;
+}
+
+.zoomdiv img {
+	max-width: inherit;
+}
+#view_full_size{
+	display:block;
+	cursor:pointer;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#pb-right-column #image-block #view_full_size .span_link {
+	position:absolute;
+	bottom:10px;
+	left:32%;
+	display:block;
+	padding:0 12px 0 30px;
+	line-height:20px;
+	color:#fff;
+	text-shadow:0 1px 0 #000;
+	text-align:center;
+	text-transform:uppercase;
+	background-image:url(../img/icon/zoom.png);
+	background-repeat:no-repeat;
+	background-position:10px 2px;
+	background-color:#000;
+	background-color:rgba(0,0,0,0.5);
+	border-radius:12px;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+}
+
+#pb-right-column #image-block #view_full_size .span_link img {
+	position:relative;
+	top:3px;
+	left:-3px;
+	border:none;
+	padding-right:2px;
+}
+
+/* miniatures */
+#pb-right-column #views_block {
+	margin-top:10px;
+	position: relative;
+	text-align: center;
+}
+
+#thumbs_list {
+	display:inline-block;
+	overflow:hidden;
+	width:100%;
+	margin-left: 2px;
+}
+
+#thumbs_list ul#thumbs_list_frame {
+	list-style-type:none;
+	padding-left:0;
+}
+
+#thumbs_list li {
+	float:left;
+	cursor:pointer;
+}
+#thumbs_list li a {
+	display: inline-block;
+	min-width: 90px;
+	
+}
+#thumbs_list li img {
+	border:1px solid #cdcdcd;
+	margin-right: 9px;
+}
+#thumbs_list li img:hover {
+	border:1px solid #34ABEB;
+}
+
+span.view_scroll_spacer {
+	background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    padding: 5px;
+    border: 1px solid #CCCCCC
+}
+span.view_scroll_spacer a {
+	padding:0 4px;
+	height:20px;
+	width:12px;
+	text-indent:-3000px;
+	background:url(../img/default/arrow-thumbs.png) left -2px no-repeat;
+	display: inline-block!important;
+	opacity: 1!important;
+	float: left;
+	overflow: hidden;
+	border-right: 1px dotted #CCCCCC;
+}
+span.view_scroll_spacer a#view_scroll_right {
+	background-position: right -2px;
+	border-right: none;
+}
+.resetimg {
+	padding:10px 0 0;
+}
+
+/* link list */
+#usefull_link_block {
+	list-style-type:none;
+	margin-top:20px;
+	border-bottom: 1px solid #ececec;
+	padding-bottom: 5px;
+}
+
+#usefull_link_block li {
+	padding:2px 0;
+	display:inline-block;
+	line-height:13px;
+	padding:5px;
+	margin-left: 5px;
+}
+
+#usefull_link_block li.print {
+	padding-left:20px;
+	background:url(../img/icon/print.png) no-repeat 0 4px;
+}
+
+#usefull_link_block li.sendtofriend {
+	padding-left:20px;
+	background:url(../img/icon/send_friend.png) no-repeat 0 5px;
+}
+
+#usefull_link_block li#left_share_fb {
+	padding-left:20px;
+	background:url(../img/icon/picto_fb.png) no-repeat 0 3px;
+}
+
+/* pb-left-column ****************************************************************************** */
+#pb-left-column  > div {	
+	padding-left: 10px;
+}
+
+#pb-left-column #short_description_block {
+	margin-top: 15px;
+}
+
+#pb-left-column #short_description_block .buttons_bottom_block {
+	display: inline-block;
+}
+
+/* form */
+#pb-left-column #buy_block {
+	margin-top:10px;
+}
+
+#buy_block p {
+	padding-bottom:10px;
+}
+
+#pb-left-column #buy_block label {
+	display:inline-block;
+	font-weight:700;
+	font-size:12px;
+	text-align:right;
+	margin-right: 5px;
+}
+
+/* short description pack */
+.short_description_pack {
+	display:none;
+}
+
+/* color_picker */
+#pb-left-column #color_picker p {
+	padding-bottom:5px;
+	font-weight:700;
+}
+
+#attributes fieldset {
+	padding-bottom:0
+}
+
+#attributes fieldset label {
+	vertical-align:top;
+}
+
+#attributes .attribute_list {
+	display:inline-block;
+}
+#attributes .attribute_list ul{
+	list-style: none;
+}
+.attribute_list #color_to_pick_list {
+	list-style-type:none;
+}
+
+.attribute_list #color_to_pick_list li {
+	float:left;
+	margin:0 8px 8px 0;
+	padding:1px;
+	border:1px solid #ececec;
+}
+.attribute_list #color_to_pick_list li:hover,
+.attribute_list #color_to_pick_list li.selected {
+	border:1px solid #34ABEB;
+}
+
+.attribute_list #color_to_pick_list a.color_pick {
+	display:block;
+	height:15px;
+	width:15px;
+}
+
+.product_attributes {
+	padding:10px 0 0;
+}
+
+#quantityAvailable {
+	font-size: 150%;
+	color:#34ABEB;
+}
+#buy_block .leo-contentprice p {
+	padding-bottom:0;
+}
+/* attributes */
+#attributes select {
+	width:120px;
+	border:1px solid #cdcdcd;
+}
+#quantity_wanted_p {
+	display:inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	float:left;
+}
+#quantity_wanted_p label {
+	float:left;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+/* quantity_wanted */
+#quantity_wanted_p input {
+	width:15px;
+	border:1px solid #cdcdcd;
+	margin-bottom:0;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+/* availability_statut */
+#availability_statut {
+	margin: 10px 0 0 0;
+}
+
+#availability_statut span#availability_label {
+	display:inline-block;
+	font-weight:700;
+	text-align:right;
+}
+
+#availability_statut #availability_value {
+	padding-right: 20px;
+}
+
+#availability_statut #availability_value.warning_inline {
+
+}
+
+/* prices */
+.content_prices {
+	margin-bottom: 10px;
+}
+
+#buy_block p.price {
+	padding:0;
+}
+
+
+#buy_block p#old_price {
+    font-size: 19px;
+	text-decoration:line-through;
+}
+
+.our_price_display {
+	padding-bottom:10px;
+	font-size:24px;
+	line-height:24px;
+	display:inline-block;
+}
+
+#reduction_percent,#reduction_amount {
+	color: #FFFFFF;
+    float: right;
+    font-size: 18px;
+    margin-top: -30px;
+}
+
+#reduction_percent span,#reduction_amount span {
+	 background: url("../img/default/new-special-bg.png") no-repeat scroll -2px -69px transparent;
+    display: block;
+    height: 49px;
+    line-height: 45px;
+    text-align: center;
+    width: 49px
+}
+
+/* online_only */
+#buy_block p.online_only {
+	font-weight:700;
+	font-size:11px;
+	color:#900;
+	text-align:left;
+	text-transform:uppercase;
+}
+
+/* add_to_cart */
+#add_to_cart {
+	margin-top:0;
+	display: inline-block;
+}
+#add_to_cart i.icon-addcart {
+	margin-right: -30px;
+	z-index: 99;
+	position: relative;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { /*hack Chrome and Safari */
+ 
+    .content_prices #add_to_cart .exclusive,.content_prices #add_to_cart .exclusive_disabled {
+		padding:6px 7px 4px 15px;
+	}
+
+}
+
+.ie9 .content_prices #add_to_cart .exclusive, .ie9 .content_prices #add_to_cart .exclusive_disabled,
+.ie8 .content_prices #add_to_cart .exclusive, .ie8 .content_prices #add_to_cart .exclusive_disabled,
+.ie7 .content_prices #add_to_cart .exclusive, .ie7 .content_prices #add_to_cart .exclusive_disabled {
+		padding:8px 7px 4px 15px;
+		line-height:12px;
+	}
+
+:first-child+html .content_prices #add_to_cart .exclusive {
+	padding:4px 3px 4px 11px;
+}
+
+.content_prices #add_to_cart span {
+
+}
+
+/* */
+.buttons_bottom_block {
+    position: relative;
+	margin-top:10px;
+}
+
+
+
+#our_price_display {
+	float: left;
+    margin-top: 6px;
+}
+/* SEND TO FRIEND (pop-in) ##################################################################### */
+#send_friend_form {
+}
+
+#send_friend_form h2 {
+	padding:8px 11px;
+	color:#fff;
+	text-shadow:0 1px 0 #000;
+	text-transform:uppercase;
+	background:#383838;
+}
+
+#send_friend_form .product {
+	margin:20px 10px;
+}
+
+#send_friend_form .product img {
+	float:left;
+	margin:0 10px 0 0;
+	border:1px solid #ececec;
+}
+
+#send_friend_form .product .product_desc {
+	float:left;
+	width:380px;
+}
+
+#send_friend_form .product .product_desc p {
+	padding:0 10px 0 0;
+	color:#333;
+}
+
+#send_friend_form .product .product_desc p.product_name {
+	font-size:12px;
+	color:#000;
+}
+
+#send_friend_form .send_friend_form_content {
+	margin:0 10px 20px;
+}
+
+#send_friend_form .form_container {
+	padding:10px 15px;
+	border:1px solid #ececec;
+	background:#eee;
+}
+
+#send_friend_form .form_container p.intro_form {
+	padding-bottom:14px;
+	font-weight:700;
+	font-size:13px;
+	color:#333;
+}
+
+#send_friend_form .form_container p.txt_required {
+	padding-bottom:0;
+	color:/* SEND TO FRIEND (pop-in) ##################################################################### */
+#666;
+}
+
+#send_friend_form .form_container .text {
+	padding-bottom:10px;
+}
+
+#send_friend_form .form_container .text label {
+	display:inline-block;
+	padding:6px 15px;
+	width:180px;
+/* 210 */
+	font-size:12px;
+	text-align:right;
+}
+
+#send_friend_form .form_container .text input {
+	padding:0 5px;
+	height:22px;
+	width:260px;
+	border:1px solid #ececec;
+	font-size:12px;
+	color:#666;
+}
+
+#send_friend_form .submit {
+	margin-top:20px;
+	padding-bottom:0;
+	text-align:right;
+}
+
+/* PACK ##################################################################### */
+#blockpack {
+	margin-top:20px;
+	padding-top:20px;
+	border-top:1px dotted #999;
+}
+
+/* PERSONNALISATION ##################################################################### */
+.customization_block {
+}
+
+.customization_block p.infoCustomizable {
+	margin:10px 0 20px;
+	padding:0 0 0 20px;
+	background:url(../img/icon/infos.gif) no-repeat 0 0 transparent;
+}
+
+ul#uploadable_files,ul#text_fields {
+	list-style-type:none;
+}
+
+.customizableProductsFile,.customizableProductsText {
+	margin-bottom:20px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ececec;
+}
+
+.customizationUploadLine {
+	padding-bottom:10px;
+}
+
+.customizationUploadLine label {
+	display:inline-block;
+	width:150px;
+	vertical-align:top;
+}
+
+.customizationUploadLine textarea {
+	height:50px;
+	width:300px;
+	border:1px solid #ececec;
+}
+
+#customizedDatas {
+	float:right;
+}
+
+.accessories_block div ul li a {
+	display:inline-block;
+}
+
+.accessories_block div ul li .s_title_block a, .accessories_block div ul li .s_title_block span  {
+	font-weight:bold;
+}
+/*************************** custom ***********************/
+.leo-product-suffix {
+	padding: 10px 0 0;
+}
+.leo-contentprice {
+	display: inline-block;
+}
+
+
+/********** Moreinfoblock *************/
+.content_prices .discount {
+	color: red;
+}

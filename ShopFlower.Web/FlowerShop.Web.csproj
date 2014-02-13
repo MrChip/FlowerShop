@@ -1,0 +1,1615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F935740-888E-4226-B3C9-86187F3CD5D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowerShop</RootNamespace>
+    <AssemblyName>FlowerShop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.607, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="FreeTextBox">
+      <HintPath>..\..\..\..\Downloads\Compressed\FTBv3-3-1\Framework-4-0\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.aspx" />
+    <Content Include="AdminControls\tongquan.ascx" />
+    <Content Include="App_Data\NHOM3.mdf" />
+    <Content Include="App_Data\NHOM3_log.ldf">
+      <DependentUpon>NHOM3.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leobtslider\940_440_sample-1.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leobtslider\940_440_sample-2.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leobtslider\940_440_sample-3.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_27-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_28-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_29-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_30-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_31-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_32-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_33-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_34-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\cache\cachefs\leominigallery\70_74_35-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\css\addresses.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\authentication.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\bootstrap-responsive.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\bootstrap.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\category.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\cms.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\contact-form.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\global.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\global_style.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockcart\blockcart.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockcart\img\icon\delete.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockcategories\blockcategories.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockcms\blockcms.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockcurrencies\blockcurrencies.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocklanguages\blocklanguages.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocklayered\blocklayered-15.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocklayered\delete.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocklayered\img\icon\less.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocklayered\img\icon\more.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleoproducttabs\blockleoproducttabs.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleorelatedproducts\blockleorelatedproducts.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleosocial\blockleosocial.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleosocial\img\social-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleospecial\blockleospecial.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockleospecial\img\lowered_en_bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockmanufacturer\blockmanufacturer.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocknewsletter\blocknewsletter.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksearch\blocksearch.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksearch\img\btn_search.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksocial\img\icon-exchang.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksocial\img\icon-money.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksocial\img\icon-secred.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocksocial\img\sprite_pict_social_block.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blocktags\blocktags.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockuserinfo\blockuserinfo.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockuserinfo\img\icon\cart.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockviewed\blockviewed.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockwishlist\blockwishlist.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockwishlist\img\arrow_right_2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockwishlist\img\icon\delete.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\blockwishlist\img\icon\pict_add_wishlist.html" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\carriercompare\style.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\favoriteproducts\favoriteproducts.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\favoriteproducts\img\add_favorite.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\favoriteproducts\img\del_favorite.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\homefeatured\homefeatured.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobootstrapmenu\image\arrow-li.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobootstrapmenu\themes\default\assets\styles.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobtslider\assets\images\arrow-control.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobtslider\assets\images\bg-slider.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobtslider\assets\images\bullets-blue-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leobtslider\assets\styles.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\leominigallery\tmpl\basic\assets\style.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\images\icon-map-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\images\icon-shipping-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\images\icon-telephone-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\images\map-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\images\store.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\lofadvancecustom\tmpl\default\assets\style.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\productcomments\img\bg_bt.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\productcomments\img\bg_li.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\productcomments\img\comment.png" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\productcomments\img\star.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\css\modules\productcomments\productcomments.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\product.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\product_list.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\scenes.css" />
+    <Content Include="App_Themes\themes\FlowerShop\css\theme-responsive.css" />
+    <Content Include="App_Themes\themes\FlowerShop\images\arrow_right_1.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\arrow_right_2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg-body.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_404.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_bt_compare.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_cart_voucher_submit.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_discount_name.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_input.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_nav-item.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\bg_table_th.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\15-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\15-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\18-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\18-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\2-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\6-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\6-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\7-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\7-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\8-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\8-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\9-category_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\9-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\br-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\de-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\en-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\es-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\fr-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\id-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\it-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\nl-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\pl-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\c\ru-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\arrow-control-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\arrow-thumbs.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\bg_body.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\bg_bt.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\border-dashed.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\btn-back-top.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\bubbles-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\cart-link-bg.html" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\dot-line-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\dot-line.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\footer-arrow-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\left-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\new-special-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\default\stripes-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\favicon7664.ico" />
+    <Content Include="App_Themes\themes\FlowerShop\images\form_bg.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\glyphicons-halflings-white.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\glyphicons-halflings.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon-viewnew.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\arrow.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\cancel_11x13.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\cible.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\delete.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\info.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\infos.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\my-account.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\myicon.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\picto_fb.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\print.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\quantity_down.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\quantity_up.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\send_friend.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\serial_scroll_left.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\serial_scroll_right.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\icon\zoom.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\index.html" />
+    <Content Include="App_Themes\themes\FlowerShop\images\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\images\logo7664.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\1.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\10.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\2.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\3.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\4.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\5.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\6.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\7.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\8.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\l\9.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\m\en-default-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\navright-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\open-close.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern1.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern10.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern11.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern12.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern13.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern14.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern15.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern16.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern3.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern4.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern5.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern6.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern7.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern8.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\patterns\pattern9.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\7\27-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\7\27-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\7\27-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\7\27-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\8\28-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\8\28-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\8\28-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\8\28-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\9\29-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\9\29-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\9\29-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\9\29-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\2\9\29-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\0\30-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\0\30-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\0\30-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\0\30-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\0\30-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\1\31-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\1\31-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\1\31-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\1\31-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\1\31-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\2\32-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\2\32-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\2\32-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\2\32-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\2\32-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\3\33-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\3\33-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\3\33-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\3\33-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\3\33-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\4\34-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\4\34-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\4\34-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\4\34-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\4\34-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\5\35-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\5\35-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\5\35-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\5\35-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\5\35-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\8\38-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\8\38-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\8\38-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\8\38-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\8\38-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\3\9\39-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\0\40-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\0\40-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\0\40-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\0\40-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\1\41-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\1\41-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\2\42-home_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\2\42-large_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\2\42-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\2\42-small_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\2\42-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\3\43-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\3\43-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\7\47-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\7\47-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\8\48-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\8\48-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\9\49-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\4\9\49-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\0\50-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\0\50-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\1\51-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\1\51-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\2\52-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\2\52-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\3\53-medium_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\5\3\53-thickbox_default.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\images\p\index.html" />
+    <Content Include="App_Themes\themes\FlowerShop\images\search-btn-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\title-block-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\images\title-block-content.png" />
+    <Content Include="App_Themes\themes\FlowerShop\info\assets\form.css" />
+    <Content Include="App_Themes\themes\FlowerShop\info\assets\form.js" />
+    <Content Include="App_Themes\themes\FlowerShop\info\assets\icon.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\cart-summary.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\cms.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\contact-form.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\custom.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery.cookie.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\jquery-1.7.2.min.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\jquery-migrate-1.2.1.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\autocomplete\jquery.autocomplete.css" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\autocomplete\jquery.autocomplete.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\blank.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\fancybox_loading.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\fancybox_overlay.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\fancybox_sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\jquery.fancybox.css" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\fancybox\jquery.fancybox.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\jquery.easing.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\jquery.idTabs.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\jquery.scrollTo.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\jquery.serialScroll.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\plugins\jquery.typewatch.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\jquery.ui.core.min.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\jquery.ui.mouse.min.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\jquery.ui.slider.min.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\jquery.ui.widget.min.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\jquery.ui.core.css" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\jquery.ui.slider.css" />
+    <Content Include="App_Themes\themes\FlowerShop\js\jquery\ui\themes\base\jquery.ui.theme.css" />
+    <Content Include="App_Themes\themes\FlowerShop\js\modules\blockcart\ajax-cart.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\modules\blocklayered\blocklayered.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\product.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\products-comparison.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\stores.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\tools.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\tools.theme.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\tools\statesManagement.js" />
+    <Content Include="App_Themes\themes\FlowerShop\js\tools\treeManagement.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockadvertising\advertising.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockcms\img\arrow_right_2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockleocustomhome\images\adv-home-1.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockleocustomhome\images\adv-home-2.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockleocustomtop\images\adv-top.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blocklink\img\arrow_right_2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockrss\img\arrow_right_2.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blocksearch\img\bg_search_input.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blocksearch\img\bg_search_submit.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\blockwishlist\js\ajax-wishlist.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\carriercompare\carriercompare.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\carriercompare\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\favoriteproducts\favoriteproducts.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leobootstrapmenu\icons\icon-home.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leobootstrapmenu\image\3.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\css\prettyPhoto.css" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\featured-iconpublic-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\featured-iconpublic-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\featured-iconpublic-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\featured-iconpublic-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\featured-iconpublic.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\hot-iconpublic-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\hot-iconpublic-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\hot-iconpublic-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\hot-iconpublic-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\hot-iconpublic.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\new-iconpublic-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\new-iconpublic-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\new-iconpublic-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\new-iconpublic-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\new-iconpublic.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-iconpublic-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-iconpublic-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-iconpublic-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-iconpublic-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-iconpublic.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\saleoff.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature_bottom-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature_bottom-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature_bottom-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature_bottom-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_feature_bottom.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_new-de.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_new-es.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_new-fr.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_new-it.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\images\status_new.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\jquery.prettyPhoto.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leominigallery\assets\style.css" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\leotempcp\bootstrap\js\bootstrap.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\lofadvancecustom\images\amex-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\lofadvancecustom\images\img-blog-bg.jpg" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\lofadvancecustom\images\payment-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\lofadvancecustom\images\paypal-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\lofadvancecustom\images\visa-bg.png" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\productcomments\img\delete.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\productcomments\img\star.gif" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\productcomments\js\jquery.rating.pack.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\productcomments\js\jquery.textareaCounter.plugin.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\productcomments\js\productcomments.js" />
+    <Content Include="App_Themes\themes\FlowerShop\modules\sendtoafriend\sendtoafriend.css" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-FreeTextBox.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-ImageGallery.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-Pro.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-ToolbarItems.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-Utility.js" />
+    <Content Include="aspnet_client\FreeTextBox\images\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\buttons.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\buttons.png" />
+    <Content Include="aspnet_client\FreeTextBox\images\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\csharp.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittablecell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergecolumns.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\separator.vertical.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\splitcells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\mergecolumns.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbutton.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbutton.down.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ar-SA.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ca-CA.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ca-ES.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\cs-CZ.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\da-DK.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\de-DE.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\el-GR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\en-US.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\es-ES.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\fa-IR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\fr-FR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\he-IL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\hu-HU.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\it-IT.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ja-JP.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ko-kr.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\Languages.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\nb-NO.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\nl-NL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\pl-PL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\pt-pt.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ro-RO.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ru-ru.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\sk-SK.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\sv-se.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\zh-cn.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\zh-TW.xml" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\normal.png" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\backcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\forecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\new.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\paste2.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.end2.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.off.normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.on.normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\Untitled-2.png" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontforecolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\forumColumnBackground.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\iespellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnafter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnbefore.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowafter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowbefore.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergecells.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergerows.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\netspell.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\normal.png" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bgcolor.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\borders.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\changecase.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\changecase.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\details.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\find.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\find.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertemail.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertemail.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggleborders.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggledetails.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggledetails.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\verse.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\verse.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontforecolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergecells.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergerows.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordclean.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordclean.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.big.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.small.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.up.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\image.gif" />
+    <Content Include="AdminControls\DanhMuc.ascx" />
+    <Content Include="AdminControls\DonDatHang.ascx" />
+    <Content Include="AdminControls\index.ascx" />
+    <Content Include="AdminControls\LienHe.ascx" />
+    <Content Include="AdminControls\login.ascx" />
+    <Content Include="AdminControls\SanPham.ascx" />
+    <Content Include="AdminControls\TinTuc.ascx" />
+    <Content Include="AdminControls\users.ascx" />
+    <Content Include="App_Themes\admin\images\edit.png" />
+    <Content Include="App_Themes\admin\images\logout.png" />
+    <Content Include="App_Themes\admin\images\settings.png" />
+    <Content Include="App_Themes\admin\images\trash.gif" />
+    <Content Include="App_Themes\admin\js\jquery.min.js" />
+    <Content Include="App_Themes\admin\js\jquery.tabify.js" />
+    <Content Include="App_Themes\admin\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ftb.imagegallery.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="uc\danhmuccha.ascx" />
+    <Content Include="uc\cart.ascx" />
+    <Content Include="uc\checkout.ascx" />
+    <Content Include="uc\ChonPTThanhToan.ascx" />
+    <Content Include="uc\doimatkhau.ascx" />
+    <Content Include="uc\end.ascx" />
+    <Content Include="uc\FooterBottom.ascx" />
+    <Content Include="uc\header.ascx" />
+    <Content Include="uc\HeaderRight.ascx" />
+    <Content Include="uc\HeaderUser.ascx" />
+    <Content Include="uc\lienhe.ascx" />
+    <Content Include="uc\LofAdvaFooter.ascx" />
+    <Content Include="uc\Login.ascx" />
+    <Content Include="uc\menu_footer.ascx" />
+    <Content Include="uc\quenmatkhau.ascx" />
+    <Content Include="uc\register.ascx" />
+    <Content Include="uc\sale.ascx" />
+    <Content Include="uc\thongtinuser.ascx" />
+    <Content Include="uc\timkiem.ascx" />
+    <Content Include="uc\TinTuc.ascx" />
+    <Content Include="uc\TinTuc_ChiTiet.ascx" />
+    <Content Include="uc\TopNavigation.ascx" />
+    <Content Include="uc\WebUserControl1.ascx" />
+    <Content Include="uploads\3.gif" />
+    <Content Include="uploads\Actions-dialog-ok-apply-icon.png" />
+    <Content Include="uploads\Actions-edit-delete-icon.png" />
+    <Content Include="uploads\admin\add-user-icon.png" />
+    <Content Include="uploads\admin\edit.jpeg" />
+    <Content Include="uploads\admin\Network-Earth-icon.png" />
+    <Content Include="uploads\admin\remove.jpg" />
+    <Content Include="uploads\admin\shopping-bags-icon.png" />
+    <Content Include="uploads\admin\shopping-icon.png" />
+    <Content Include="uploads\admin\shopping-iicon.png" />
+    <Content Include="uploads\admin\store-icon.png" />
+    <Content Include="uploads\admin\talking-icon.png" />
+    <Content Include="uploads\admin\users-icon.png" />
+    <Content Include="uploads\btLogon.gif" />
+    <Content Include="uploads\btn_add_to_cart.gif" />
+    <Content Include="uploads\btn_bk.gif" />
+    <Content Include="uploads\btn_checkout_now.gif" />
+    <Content Include="uploads\btn_nl.gif" />
+    <Content Include="uploads\cancel_order.png" />
+    <Content Include="uploads\icoXoa.gif" />
+    <Content Include="uploads\mua.jpg" />
+    <Content Include="uploads\search-bt.png" />
+    <Content Include="uploads\sendorder.png" />
+    <Content Include="uc\DanhMuc_Uc.ascx" />
+    <Content Include="uc\index_list.ascx" />
+    <Content Include="uc\MainMenu.ascx" />
+    <Content Include="uc\Menu_Left.ascx" />
+    <Content Include="uc\chitietsanpham.ascx" />
+    <Content Include="uc\SanPhamMoi.ascx" />
+    <Content Include="uc\Slide.ascx" />
+    <Content Include="uc\SP_Hot.ascx" />
+    <Content Include="uploads\slider\1.jpg" />
+    <Content Include="uploads\slider\2.jpg" />
+    <Content Include="uploads\slider\3.jpg" />
+    <Content Include="uploads\slider\4.jpg" />
+    <Content Include="uploads\slider\5.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\DanhMuc.ascx.cs">
+      <DependentUpon>DanhMuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\DanhMuc.ascx.designer.cs">
+      <DependentUpon>DanhMuc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\DonDatHang.ascx.cs">
+      <DependentUpon>DonDatHang.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\DonDatHang.ascx.designer.cs">
+      <DependentUpon>DonDatHang.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\index.ascx.cs">
+      <DependentUpon>index.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\index.ascx.designer.cs">
+      <DependentUpon>index.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\LienHe.ascx.cs">
+      <DependentUpon>LienHe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\LienHe.ascx.designer.cs">
+      <DependentUpon>LienHe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\login.ascx.cs">
+      <DependentUpon>login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\login.ascx.designer.cs">
+      <DependentUpon>login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\SanPham.ascx.cs">
+      <DependentUpon>SanPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\SanPham.ascx.designer.cs">
+      <DependentUpon>SanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\TinTuc.ascx.cs">
+      <DependentUpon>TinTuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\TinTuc.ascx.designer.cs">
+      <DependentUpon>TinTuc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\tongquan.ascx.cs">
+      <DependentUpon>tongquan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\tongquan.ascx.designer.cs">
+      <DependentUpon>tongquan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControls\users.ascx.cs">
+      <DependentUpon>users.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControls\users.ascx.designer.cs">
+      <DependentUpon>users.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="uc\danhmuccha.ascx.cs">
+      <DependentUpon>danhmuccha.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\danhmuccha.ascx.designer.cs">
+      <DependentUpon>danhmuccha.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\cart.ascx.cs">
+      <DependentUpon>cart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\cart.ascx.designer.cs">
+      <DependentUpon>cart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\checkout.ascx.cs">
+      <DependentUpon>checkout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\checkout.ascx.designer.cs">
+      <DependentUpon>checkout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\ChonPTThanhToan.ascx.cs">
+      <DependentUpon>ChonPTThanhToan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\ChonPTThanhToan.ascx.designer.cs">
+      <DependentUpon>ChonPTThanhToan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\DanhMuc_Uc.ascx.cs">
+      <DependentUpon>DanhMuc_Uc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\DanhMuc_Uc.ascx.designer.cs">
+      <DependentUpon>DanhMuc_Uc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\doimatkhau.ascx.cs">
+      <DependentUpon>doimatkhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\doimatkhau.ascx.designer.cs">
+      <DependentUpon>doimatkhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\end.ascx.cs">
+      <DependentUpon>end.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\end.ascx.designer.cs">
+      <DependentUpon>end.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\FooterBottom.ascx.cs">
+      <DependentUpon>FooterBottom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\FooterBottom.ascx.designer.cs">
+      <DependentUpon>FooterBottom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\header.ascx.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\header.ascx.designer.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\HeaderRight.ascx.cs">
+      <DependentUpon>HeaderRight.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\HeaderRight.ascx.designer.cs">
+      <DependentUpon>HeaderRight.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\HeaderUser.ascx.cs">
+      <DependentUpon>HeaderUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\HeaderUser.ascx.designer.cs">
+      <DependentUpon>HeaderUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\index_list.ascx.cs">
+      <DependentUpon>index_list.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\index_list.ascx.designer.cs">
+      <DependentUpon>index_list.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\lienhe.ascx.cs">
+      <DependentUpon>lienhe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\lienhe.ascx.designer.cs">
+      <DependentUpon>lienhe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\LofAdvaFooter.ascx.cs">
+      <DependentUpon>LofAdvaFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\LofAdvaFooter.ascx.designer.cs">
+      <DependentUpon>LofAdvaFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\Login.ascx.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\Login.ascx.designer.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\MainMenu.ascx.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\MainMenu.ascx.designer.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\menu_footer.ascx.cs">
+      <DependentUpon>menu_footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\menu_footer.ascx.designer.cs">
+      <DependentUpon>menu_footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\Menu_Left.ascx.cs">
+      <DependentUpon>Menu_Left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\Menu_Left.ascx.designer.cs">
+      <DependentUpon>Menu_Left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\chitietsanpham.ascx.cs">
+      <DependentUpon>chitietsanpham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\chitietsanpham.ascx.designer.cs">
+      <DependentUpon>chitietsanpham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\quenmatkhau.ascx.cs">
+      <DependentUpon>quenmatkhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\quenmatkhau.ascx.designer.cs">
+      <DependentUpon>quenmatkhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\register.ascx.cs">
+      <DependentUpon>register.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\register.ascx.designer.cs">
+      <DependentUpon>register.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\sale.ascx.cs">
+      <DependentUpon>sale.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\sale.ascx.designer.cs">
+      <DependentUpon>sale.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\SanPhamMoi.ascx.cs">
+      <DependentUpon>SanPhamMoi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\SanPhamMoi.ascx.designer.cs">
+      <DependentUpon>SanPhamMoi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\Slide.ascx.cs">
+      <DependentUpon>Slide.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\Slide.ascx.designer.cs">
+      <DependentUpon>Slide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\SP_Hot.ascx.cs">
+      <DependentUpon>SP_Hot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\SP_Hot.ascx.designer.cs">
+      <DependentUpon>SP_Hot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\thongtinuser.ascx.cs">
+      <DependentUpon>thongtinuser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\thongtinuser.ascx.designer.cs">
+      <DependentUpon>thongtinuser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\timkiem.ascx.cs">
+      <DependentUpon>timkiem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\timkiem.ascx.designer.cs">
+      <DependentUpon>timkiem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\TinTuc.ascx.cs">
+      <DependentUpon>TinTuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\TinTuc.ascx.designer.cs">
+      <DependentUpon>TinTuc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\TinTuc_ChiTiet.ascx.cs">
+      <DependentUpon>TinTuc_ChiTiet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\TinTuc_ChiTiet.ascx.designer.cs">
+      <DependentUpon>TinTuc_ChiTiet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\TopNavigation.ascx.cs">
+      <DependentUpon>TopNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\TopNavigation.ascx.designer.cs">
+      <DependentUpon>TopNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopFlower.Core\FlowerShop.Core.csproj">
+      <Project>{0707FE31-2698-480A-81A2-9BB68D46B7C1}</Project>
+      <Name>FlowerShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopFlower.DataAccess\FlowerShop.DataAccess.csproj">
+      <Project>{35521DFE-07CD-4814-8EB2-B9705C1DE4FD}</Project>
+      <Name>FlowerShop.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="auto.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.Master" />
+    <None Include="aspnet_client\FreeTextBox\images\css\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\buttonbackgrounds.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\Image-Normal.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\ToolbarButton-Background.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\images\subs\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\images\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\Languages\_sgbak\de-de.xml.2005-03-22.10-39-30.0156" />
+    <None Include="aspnet_client\FreeTextBox\Languages\_sgbak\Languages.xml.2005-03-17.21-30-04.5156" />
+    <None Include="aspnet_client\FreeTextBox\Languages\_sgbak\Languages.xml.2005-03-22.10-39-19.7187" />
+    <None Include="aspnet_client\FreeTextBox\office2000\subs\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\office2000\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeMac\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\officeMac\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\old\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\subs\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\utility\Thumbs.db" />
+    <None Include="App_Themes\admin\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\themes\FlowerShop\images\st\" />
+    <Folder Include="uploads\products\" />
+    <Folder Include="uploads\tintuc\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8827</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+ #blockleospecial {
+    position: relative;
+    padding-top: 3px;
+ }
+ #blockleospecial ul {
+ 	display: block;
+ }
+ #blockleospecial .leo-special {
+ 	background: url("img/lowered_en_bg.png") no-repeat scroll left top transparent;
+    height: 42px;
+    position: absolute;
+    right: 0;
+    text-indent: -99999px;
+    top: 0;
+    width: 40px;
+}
+#blockleospecial li h5 a {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+#blockleospecial .product_block .price {
+    font-size: 13px;
+}
+#blockleospecial .product_block .content_price {
+	margin-top: -3px;
+}
+#blockleospecial span.price-discount {
+    font-size: 17px;
+    line-height: 35px;
+    margin-left: 13px;
+    text-decoration: line-through;
+}
+#blockleospecial .product_block .product_desc {
+	max-height: 40px;
+	margin: 0;
+}

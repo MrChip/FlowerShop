@@ -1,0 +1,22 @@
+/* Block relatedproducts */
+#relatedproducts {
+	position: relative;
+	overflow: inherit;
+	clear: both;
+}
+	#leorelatedcarousel {
+		position: static;
+	}
+	#relatedproducts h2.title_block {
+		background: none repeat scroll 0 0 #DC577A;
+		border: 0 none;
+		font-size: 20px;
+		padding: 5px 12px;
+		text-shadow: inherit;
+	}
+	#relatedproducts .carousel {
+		    position: static;
+	}
+	#relatedproducts .leocontrol .carousel-control {
+		top: 15px;
+	}

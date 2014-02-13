@@ -1,0 +1,25 @@
+/* footer */
+#footer .block_various_links {}
+
+#block_various_links_footer ul li:first-child {
+	background: none;
+	padding-left: 0;
+}
+/* Block CMS links */
+.informations_block_left li {border-bottom:1px dotted #dddddd}
+.informations_block_left li.last {border:none;}
+.informations_block_left li a {
+    display:block;
+    
+}
+    
+tr.subitem > td:first-child + td {
+    padding-left: 10px;
+}
+<div id="leo-payment">
+<a class="leo-paymentlink1" href="#"><img src="/demo_1541/modules/lofadvancecustom/images/paymentlink1.png" alt="" /></a> 
+<a class="leo-paymentlink2" href="#"><img src="/demo_1541/modules/lofadvancecustom/images/paymentlink2.png" alt="" /></a>
+ <a class="leo-paymentlink3" href="#"><img src="/demo_1541/modules/lofadvancecustom/images/paymentlink3.png" alt="" /></a> 
+ <a class="leo-paymentlink4" href="#"><img src="/demo_1541/modules/lofadvancecustom/images/paymentlink4.png" alt="" /></a>
+  <a class="leo-paymentlink5" href="#"><img src="/demo_1541/modules/lofadvancecustom/images/paymentlink5.png" alt="" /></a>
+  </div>

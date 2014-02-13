@@ -1,0 +1,364 @@
+/**********************************************************
+		SUFFIX CLASS COLOR
+***********************************************************/
+
+/*********** TITLE MODULES********************************/
+	
+	.title_wood {
+		background:url("../img/navright-bg.png") repeat scroll center top transparent;
+		padding: 12px 10px 11px;
+		line-height: 20px;
+		border:1px soild #DEDEDE;
+		color: #fff;
+	}
+
+	.title_block_content {
+		background: url(../img/title-block-content.png) right center no-repeat;
+		padding:10px 25px 10px 15px;
+		color: #fff;
+		display:inline-block;
+	}
+	h3.title_block {
+		background-color: #EDEDED;
+		background-image: url("../img/default/stripes-bg.png");
+	    font-weight: normal;
+	    line-height: 35px;
+	    overflow: hidden;
+	    padding-left: 10px;
+	    margin-bottom: 15x;
+	}
+	h4.title_block {
+		background: url("../img/default/dot-line-bg.png") repeat-x scroll left bottom #FAFAFA;
+	    border-bottom: 0 none;
+	    position: relative;
+	    font-weight: normal;
+	    line-height: 40px;
+	    overflow: hidden;
+	    text-transform: uppercase;
+	}
+	h4.title_block:before {
+		background: url("../img/default/dot-line.png") repeat-x scroll left bottom transparent;
+	    content: "";
+	    height: 1px;
+	    left: 0;
+	    position: absolute;
+	    top: 0;
+	    width: 100%;
+	}
+	
+		
+	/*************************** custom bootstarp **************************************/ 
+		@media print {
+		  a:link:after, a:visited:after {
+		    content: "";
+		  }
+		}
+		.row-fluid [class*="span"] {min-height: 26px!important;}
+		select {width: 205px;}
+		input.pull-left {margin: 2px 5px 2px 0;}
+		.hidden-smalltablet {
+			display: none;
+		}
+		.container {
+			position: relative;
+		}
+
+		.row-fluid .myspan3 {
+			width: 25.53196%;
+		}
+		.groupe-btn {
+			display: none;
+		}
+		.dropdown-menu {border-radius: 0!important; padding: 5px 10px; margin-top:0}
+
+		.dropdown-menu > a {
+			display: block;
+			padding: 5px;
+		}
+		.g-dropdown > .group {
+			padding:  8px 0;
+		}
+		.g-dropdown .dropdown-menu {padding: 0; margin-top: -1px;}
+		.g-dropdown .caret {margin-top: 5px;}
+		.g-dropdown .dropdown-menu > li > a:hover,
+		.g-dropdown .dropdown-menu > li > a {
+			background: none;
+		}
+		.group:hover > .dropdown-menu {
+			display: block;
+		}
+		#currencies_block {min-width: 60px;}
+		/*********** custom myicon ****************/
+
+				[class^="icon-leo"], [class*=" icon-leo"] {
+					    background-image: url("../img/icon/myicon.png");
+					    background-position: -2px -2px;
+					    width: 34px;
+					    height: 30px;
+					    margin-top: -2px;
+				}		
+		#productsview > a {
+			cursor: pointer;
+			float: left;
+			margin-top: 5px;
+		}
+		#productsview > a > i {
+			background-position: 0px -30px;
+			font-style: normal;
+			padding-left: 17px;
+			display:block;
+			font-size: 12px;
+			width: auto;
+			border:0;
+			margin-right: 10px;
+			font-weight: bold;
+		}
+		#productsview > a:hover > i,
+		#productsview > a > i.active {
+			background-position: 0 0;
+		}
+		#productsview > a > i.icon-leoth-list {
+			background-position: 0 -106px;
+		}
+		#productsview > a:hover > i.icon-leoth-list,
+		#productsview > a > i.icon-leoth-list.active {
+			background-position: 0 -65px;
+		} 
+
+
+		/***************** end myicon **************/
+
+		/*** button carousel  *******/
+			.leocontrol {
+				position: static!important;
+			}
+			.leocontrol .carousel-control {
+			       background-color: transparent;
+				    background-image: url("../img/default/arrow-control-bg.png");
+				    border: medium none;
+				    border-radius: 0 0 0 0;
+				    display: block;
+				    height: 13px;
+				    margin-top: 0;
+				    opacity: 1;
+				    overflow: hidden;
+				    text-indent: -9999em;
+				    top: 10px;
+				    width: 13px;
+				    z-index: 99;
+			}
+
+			.leocontrol .carousel-control.left {
+				background-position: left 0;
+			    left: auto;
+			    right: 30px;
+			}
+			.leocontrol .carousel-control.left:hover {
+				background-position: left -83px;
+			}
+			.leocontrol .carousel-control.right {
+				background-position: right 0;
+    			right: 13px;
+			}
+			.leocontrol .carousel-control.right:hover{
+				background-position: right -83px;
+			} 
+				
+
+
+		
+
+/********************* BACKGROUND DEFAULT *******************************/
+	.bg_black {
+		background-color:#000;
+	}
+	.bg_wood {
+		background:url("../img/navright-bg.png") repeat scroll center top transparent
+	}
+	.bg_white {
+		background-color: #fff;
+	}
+	.bg_gray {
+		background-color: #efefef;
+	}
+	.bg_pink {
+		background-color: #d22753;
+	}
+	.bg_brown {
+		background-color: #c7c5c2;
+	}
+	.bg_none {
+		background:none;
+	}
+	.bg_stripes {
+		background-image: url("../img/default/stripes-bg.png");
+	}
+	.bg-dotline {
+		background-image: url("../img/default/dot-line-bg.png");
+		background-repeat:  repeat-x;
+		background-position: left bottom;
+	}
+	.bg_block_content {
+		background-color: #FAFAFA;
+	    border: 1px solid #DEDADE;
+	    border-radius: 5px 5px 5px 5px;
+	    box-shadow: 0 1px 0 #CCCCCC;
+	    overflow: hidden
+	}
+/*****************************************************************************************
+						css3
+******************************************************************************************/	
+		
+	a {
+			-ms-transition: color 0.3s linear 0s; 
+			-o-transition: color 0.3s linear 0s; 
+			-moz-transition: color 0.3s linear 0s; 
+			-webkit-transition: color 0.3s linear 0s; 
+			transition: color 0.3s linear 0s; 
+	}
+
+	
+	/************ product list ******************/
+	#productsview  .btn { 
+		background: none repeat scroll 0 0 transparent;
+	    border: medium none;
+	    border-radius: 0 0 0 0;
+	    box-shadow: none;
+	    color: #747676;
+	    float: left;
+	    margin-right: 10px;
+	    padding: 0;
+	    margin-top: 5px;
+	}
+	#productsview  a i {
+		font-style: inherit;
+	    font-weight: bold;
+	    height: 14px;
+	    line-height: 17px;
+	    margin-right: 5px;
+	    padding-left: 20px;
+	    width: auto;
+	}
+	#productsview  a i
+	.product_block .product-container:hover {
+			box-shadow: 0 0 10px #000000;
+	}
+	.product_block a.product_img_link,
+	#pb-right-column #image-block img,
+	.thumb_light ul.lof_thumblist li,
+	#thumbs_list li img {
+		-ms-transition: border-color 0.3s linear 0s; 
+		-o-transition: border-color 0.3s linear 0s; 
+		-moz-transition: border-color 0.3s linear 0s; 
+		-webkit-transition: border-color 0.3s linear 0s; 
+		transition: border-color 0.3s linear 0s;
+	}
+
+
+/*****************************************************************************************
+						EXTENSION
+*******************************************************************************************/
+
+	/******** menu ***********/
+		
+		.navbar .nav > .active > a > .menu-icon,
+		.navbar .nav > li > a:focus > .menu-icon, 
+		.navbar .nav > li > a:hover .menu-icon {
+			background-position: 0 -82px!important
+		}	
+			
+	/*********** customhome **************/
+		#leo-customhtml-home h3 {
+			font-size: 15px;
+			text-transform: uppercase;
+			margin-top: 0;
+		}
+		#leo-customhtml-home .leo_block_content {
+			padding-top: 0!important;
+		}
+	/******blockuserinfo ***********/
+		.leo-groupe{ position: relative; padding: 8px 0;}
+		.groupe-content.eshow{
+			 background: none repeat scroll 0 0 #FFFFFF;
+		    box-shadow: 0 0 3px #CCCCCC;
+		    display: block !important;
+		    padding: 5px 10px;
+		    position: absolute;
+		    right: 5px;
+		    top: 25px;
+		    z-index: 999;
+		}
+		.groupe-content.eshow .nav-item {
+			padding: 4px 0;
+		}
+		.g-dropdown .caret {
+			border-top: 6px solid #C2C2C2;
+		}
+	/******* producttabs***********/
+		#productTabs:after {
+			content: "";
+			left: 0;
+			bottom: 0;
+			height:5px;
+			width: 100%;
+			background: url(../img/default/dot-line-bg.png) left top repeat-x;
+
+		}
+	
+	/************* lofminigallery **************************/
+		#pb-right-column #image-block img:hover,
+		.thumb_light ul.lof_thumblist li:hover {
+			border-color:#4EAAC8;
+		}	
+	/**************lofadvafooterfooter  *******************/
+		#lofadva-pos-1 h2 {
+			color: #FFFFFF;
+   			font-size: 14px;
+   			float: left; 
+   			text-transform: uppercase;
+   			margin-right: 10px;
+   			line-height: 10px;
+		}
+		#lofadva-pos-1  ul {
+			display: inline-block;
+		}
+		#lofadva-pos-1  ul li {
+			display: inline-block;
+			margin-top: 5px;
+			margin-right: 3px;
+		}
+		#lofadva-pos-1 .lofadva-block-3 {
+			text-align: right;
+		}
+		#lofadva-pos-2 {
+			background: url("../img/default/dot-line-bg.png") repeat-x scroll left bottom;
+		} 
+		#lofadva-pos-2 h2 {
+			 font-size: 15px;
+		    font-weight: normal;
+		    text-transform: uppercase;
+		}
+		#lofadva-pos-2 .lof-position-wrap > div {
+			margin-right: 2%;
+		}
+		#lofadva-pos-2 .lof-position-wrap > div:last-child {
+			margin-right: 0;
+		}
+		#lofadva-pos-2 .lofadva-block-3 .lof-block-wrap ul li,
+		#lofadva-pos-2 .lofadva-block-2 .lof-block-wrap ul li {
+			padding: 6px 0;
+		}
+		.img-blog {
+			border: 5px solid #E5E5E5;
+			display: block;
+		}
+		#lofadva-pos-2 .lofadva-block-3 .lof-block-wrap ul li a,
+		#lofadva-pos-2 .lofadva-block-2 .lof-block-wrap ul li a {
+			background: url(../img/default/footer-arrow-bg.png) left 3px no-repeat;
+			padding-left: 15px; 
+		}
+		#lofadva-pos-2 .lofadva-block-3 .lof-block-wrap ul li a:hover,
+		#lofadva-pos-2 .lofadva-block-2 .lof-block-wrap ul li a:hover {
+			background-position:  left -33px;
+		} 
+	

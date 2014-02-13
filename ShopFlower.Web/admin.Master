@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="FlowerShop.admin"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>T2-Shop Admin</title>
+<link rel="stylesheet" type="text/css" href="App_Themes/admin/style.css" />
+
+<!-- jQuery file -->
+<script src="App_Themes/admin/js/jquery.min.js"></script>
+<script src="App_Themes/admin/js/jquery.tabify.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $(function () {
+        $('#tabsmenu').tabify();
+        $(".toggle_container").hide();
+        $(".trigger").click(function () {
+            $(this).toggleClass("active").next().slideToggle("slow");
+            return false;
+        });
+    });
+</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="panelwrap">
+  	
+	<div class="header">
+    <div class="title"><a href="admin.aspx">T2-Shop Admin</a></div>
+    
+    <%if (Session["admin"] != null)
+      { %>
+    <div class="header_right">Welcome <%=Session["username"].ToString()%> 
+        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="logout" 
+            onclick="LinkButton1_Click">Logout</asp:LinkButton> </div>
+    <%} %>
+    
+    <div class="menu">
+   
+    </div>
+    
+    </div>
+    
+    <div class="submenu">
+    
+<MARQUEE BEHAVIOR=slide> <h4>Chào mừng đến với hệ thống quản trị website T2-Shop Chúc bạn có 1 ngày làm việc vui vẻ </h4></MARQUEE> 
+    </div>          
+                    
+    <div class="center_content">  
+ 
+    <div id="right_wrap">
+    <div id="right_content">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+     </div><!-- end of right content-->
+                     
+                    
+    <div class="sidebar" id="sidebar">
+    <h2>Menu Chức Năng</h2>
+    
+        <ul>
+            <li><a href="Default.aspx" target="_blank">Xem trang chủ</a></li>
+            <li><a href="admin.aspx">Home</a></li>
+            
+            
+            
+        </ul>
+        
+    </div>             
+    
+    
+    <div class="clear"></div>
+    </div> <!--end of center_content-->
+    
+    <div class="footer">
+Hệ Thống quản trị website T2-shop Demo môn học asp.net
+</div>
+
+</div>
+    </form>
+</body>
+</html>
+  <div>
+        

@@ -1,0 +1,1897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FlowerShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FlowerShopModelStoreContainer">
+          <EntitySet Name="Category" EntityType="FlowerShopModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="FlowerShopModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orderdetails" EntityType="FlowerShopModel.Store.Orderdetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="FlowerShopModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="FlowerShopModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="FlowerShopModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TinTuc" EntityType="FlowerShopModel.Store.TinTuc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="FlowerShopModel.Store.users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="View_DonHang" EntityType="FlowerShopModel.Store.View_DonHang" store:Type="Views" store:Schema="dbo" store:Name="View_DonHang">
+            <DefiningQuery>SELECT 
+      [View_DonHang].[orderid] AS [orderid], 
+      [View_DonHang].[ProductsId] AS [ProductsId], 
+      [View_DonHang].[SoLuong] AS [SoLuong], 
+      [View_DonHang].[id] AS [id], 
+      [View_DonHang].[TenKhachHang] AS [TenKhachHang], 
+      [View_DonHang].[DiaChi] AS [DiaChi], 
+      [View_DonHang].[Email] AS [Email], 
+      [View_DonHang].[Phone] AS [Phone], 
+      [View_DonHang].[GhiChu] AS [GhiChu], 
+      [View_DonHang].[TongTien] AS [TongTien], 
+      [View_DonHang].[status] AS [status]
+      FROM [dbo].[View_DonHang] AS [View_DonHang]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Orderdetails_Orders" Association="FlowerShopModel.Store.FK_Orderdetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Orderdetails" EntitySet="Orderdetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orderdetails_Products" Association="FlowerShopModel.Store.FK_Orderdetails_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Orderdetails" EntitySet="Orderdetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_contact" Association="FlowerShopModel.Store.FK_Orders_contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Items" Association="FlowerShopModel.Store.FK_Products_Items">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Parentid" Type="int" />
+          <Property Name="Names" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="No" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Address" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Noidung" Type="nvarchar" MaxLength="2000" />
+          <Property Name="TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="Orderdetails">
+          <Key>
+            <PropertyRef Name="Orderid" />
+            <PropertyRef Name="ProductsId" />
+          </Key>
+          <Property Name="Orderid" Type="int" Nullable="false" />
+          <Property Name="ProductsId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="SoLuong" Type="int" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomID" Type="int" />
+          <Property Name="Cus_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="TongTien" Type="float" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_item" Type="int" />
+          <Property Name="pName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pDetail" Type="nvarchar(max)" />
+          <Property Name="pDescriptions" Type="nvarchar" MaxLength="500" />
+          <Property Name="pPricecurrent" Type="float" />
+          <Property Name="pPriceold" Type="float" />
+          <Property Name="pImage" Type="nvarchar(max)" />
+          <Property Name="pNew" Type="bit" />
+          <Property Name="pPromotion" Type="bit" />
+          <Property Name="pHot" Type="bit" />
+          <Property Name="pModify" Type="nvarchar" MaxLength="100" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HinhDaiDien" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TieuDe" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="TomTat" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NoiDung" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NgayDang" Type="smalldatetime" Nullable="false" />
+          <Property Name="TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Birdthday" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rolecode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'FlowerShop.dbo.View_DonHang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="View_DonHang">
+          <Key>
+            <PropertyRef Name="orderid" />
+            <PropertyRef Name="ProductsId" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="orderid" Type="int" Nullable="false" />
+          <Property Name="ProductsId" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="TenKhachHang" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="TongTien" Type="float" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Orderdetails_Orders">
+          <End Role="Orders" Type="FlowerShopModel.Store.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orderdetails" Type="FlowerShopModel.Store.Orderdetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orderdetails">
+              <PropertyRef Name="Orderid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orderdetails_Products">
+          <End Role="Products" Type="FlowerShopModel.Store.Products" Multiplicity="1" />
+          <End Role="Orderdetails" Type="FlowerShopModel.Store.Orderdetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orderdetails">
+              <PropertyRef Name="ProductsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_contact">
+          <End Role="Contact" Type="FlowerShopModel.Store.Contact" Multiplicity="0..1" />
+          <End Role="Orders" Type="FlowerShopModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Items">
+          <End Role="Category" Type="FlowerShopModel.Store.Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="FlowerShopModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="id_item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="category_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parentid" Type="nvarchar" Mode="In" />
+          <Parameter Name="names" Type="nvarchar" Mode="In" />
+          <Parameter Name="no" Type="int" Mode="In" />
+          <Parameter Name="active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="category_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="category_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="category_getall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="category_GetDanhMucCon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="category_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="parentid" Type="nvarchar" Mode="In" />
+          <Parameter Name="names" Type="nvarchar" Mode="In" />
+          <Parameter Name="no" Type="int" Mode="In" />
+          <Parameter Name="active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="category_update_TrangThai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="changepass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="pass" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="contact_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hoten" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="noidung" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="contact_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="contact_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="contact_getall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="contact_GetXuLy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="contact_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="trangthai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getchild" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idca" Type="nvarchar" Mode="In" />
+          <Parameter Name="active" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getparent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="active" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Orderdetails_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orderid" Type="int" Mode="In" />
+          <Parameter Name="ProductsId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orderdetails_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orderdetails_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orderid" Type="int" Mode="In" />
+          <Parameter Name="ProductsId" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orderdetails_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orderid" Type="int" Mode="In" />
+          <Parameter Name="ProductsId" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orders_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orders_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Orders_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Orders_GetTrangThai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="trangthai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Orders_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="InOut" />
+          <Parameter Name="TenKhachHang" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="GhiChu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TongTien" Type="float" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Orders_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="TenKhachHang" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="GhiChu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TongTien" Type="float" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="products_Active" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="status" Type="bit" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_item" Type="int" Mode="In" />
+          <Parameter Name="pname" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pmota" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pchitiet" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ppricecurrent" Type="float" Mode="In" />
+          <Parameter Name="ppriceold" Type="float" Mode="In" />
+          <Parameter Name="pimage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pnew" Type="bit" Mode="In" />
+          <Parameter Name="pkhuyenmai" Type="bit" Mode="In" />
+          <Parameter Name="phot" Type="bit" Mode="In" />
+          <Parameter Name="pngaydang" Type="nvarchar" Mode="In" />
+          <Parameter Name="active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Products_count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Products_Del_pro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_Get_By_DanhMucCha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="products_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Products_Getby_option" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="option" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Products_getdetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_GetHot" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Products_Getnameitem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_GetNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Products_getpro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Products_Getpro_by" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="iditem" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Products_getpro_parent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_GetSaLe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="khuyenmai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="products_sanphamcungloai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="soluong" Type="int" Mode="In" />
+          <Parameter Name="iddanhmuc" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="products_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="key" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Products_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="id_item" Type="int" Mode="In" />
+          <Parameter Name="pname" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pmota" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pchitiet" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ppricecurrent" Type="float" Mode="In" />
+          <Parameter Name="ppriceold" Type="float" Mode="In" />
+          <Parameter Name="pimage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pnew" Type="bit" Mode="In" />
+          <Parameter Name="pkhuyenmai" Type="bit" Mode="In" />
+          <Parameter Name="phot" Type="bit" Mode="In" />
+          <Parameter Name="pngaydang" Type="nvarchar" Mode="In" />
+          <Parameter Name="active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TinTuc_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TinTuc_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TinTuc_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TinTuc_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HinhDaiDien" Type="nvarchar" Mode="In" />
+          <Parameter Name="TieuDe" Type="nvarchar" Mode="In" />
+          <Parameter Name="TomTat" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NgayDang" Type="smalldatetime" Mode="In" />
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="TinTuc_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="HinhDaiDien" Type="nvarchar" Mode="In" />
+          <Parameter Name="TieuDe" Type="nvarchar" Mode="In" />
+          <Parameter Name="TomTat" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="users_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="fullname" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="birdthday" Type="nvarchar" Mode="In" />
+          <Parameter Name="phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="rolecode" Type="nvarchar" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="users_checkmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="users_checkuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="users_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="users_doipass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="pass" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="users_getall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="users_getbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="users_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="fullname" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="birdthday" Type="nvarchar" Mode="In" />
+          <Parameter Name="phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="rolecode" Type="nvarchar" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FlowerShopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FlowerShopEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="FlowerShopModel.Category" />
+          <EntitySet Name="Contacts" EntityType="FlowerShopModel.Contact" />
+          <EntitySet Name="Orderdetails" EntityType="FlowerShopModel.Orderdetail" />
+          <EntitySet Name="Orders" EntityType="FlowerShopModel.Order" />
+          <EntitySet Name="Products" EntityType="FlowerShopModel.Product" />
+          <EntitySet Name="sysdiagrams" EntityType="FlowerShopModel.sysdiagram" />
+          <EntitySet Name="TinTucs" EntityType="FlowerShopModel.TinTuc" />
+          <EntitySet Name="users" EntityType="FlowerShopModel.user" />
+          <EntitySet Name="View_DonHang" EntityType="FlowerShopModel.View_DonHang" />
+          <AssociationSet Name="FK_Products_Items" Association="FlowerShopModel.FK_Products_Items">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_contact" Association="FlowerShopModel.FK_Orders_contact">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orderdetails_Orders" Association="FlowerShopModel.FK_Orderdetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Orderdetails" EntitySet="Orderdetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orderdetails_Products" Association="FlowerShopModel.FK_Orderdetails_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Orderdetails" EntitySet="Orderdetails" />
+          </AssociationSet>
+          <FunctionImport Name="category_add" ReturnType="Collection(Decimal)">
+            <Parameter Name="parentid" Mode="In" Type="String" />
+            <Parameter Name="names" Mode="In" Type="String" />
+            <Parameter Name="no" Mode="In" Type="Int32" />
+            <Parameter Name="active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="category_delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="category_get" ReturnType="Collection(FlowerShopModel.category_get_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="category_getall" ReturnType="Collection(FlowerShopModel.category_getall_Result)" />
+          <FunctionImport Name="category_GetDanhMucCon" ReturnType="Collection(FlowerShopModel.category_GetDanhMucCon_Result)">
+            <Parameter Name="active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="category_update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="parentid" Mode="In" Type="String" />
+            <Parameter Name="names" Mode="In" Type="String" />
+            <Parameter Name="no" Mode="In" Type="Int32" />
+            <Parameter Name="active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="category_update_TrangThai">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="changepass">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="contact_add">
+            <Parameter Name="hoten" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="noidung" Mode="In" Type="String" />
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="contact_delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="contact_get">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="contact_getall" ReturnType="Collection(FlowerShopModel.contact_getall_Result)" />
+          <FunctionImport Name="contact_GetXuLy" ReturnType="Collection(FlowerShopModel.contact_GetXuLy_Result)">
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="contact_update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="trangthai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="getchild" ReturnType="Collection(FlowerShopModel.getchild_Result)">
+            <Parameter Name="idca" Mode="In" Type="String" />
+            <Parameter Name="active" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getparent" ReturnType="Collection(FlowerShopModel.getparent_Result)">
+            <Parameter Name="active" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="menu" />
+          <FunctionImport Name="Orderdetails_Delete">
+            <Parameter Name="orderid" Mode="In" Type="Int32" />
+            <Parameter Name="ProductsId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orderdetails_GetById" ReturnType="Collection(FlowerShopModel.Orderdetails_GetById_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orderdetails_Insert">
+            <Parameter Name="orderid" Mode="In" Type="Int32" />
+            <Parameter Name="ProductsId" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orderdetails_Update">
+            <Parameter Name="orderid" Mode="In" Type="Int32" />
+            <Parameter Name="ProductsId" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orders_Delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orders_GetAll" ReturnType="Collection(FlowerShopModel.Orders_GetAll_Result)" />
+          <FunctionImport Name="Orders_GetById" ReturnType="Collection(FlowerShopModel.Orders_GetById_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Orders_GetTrangThai" ReturnType="Collection(FlowerShopModel.Orders_GetTrangThai_Result)">
+            <Parameter Name="trangthai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Orders_Insert">
+            <Parameter Name="id" Mode="InOut" Type="Int32" />
+            <Parameter Name="TenKhachHang" Mode="In" Type="String" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="GhiChu" Mode="In" Type="String" />
+            <Parameter Name="TongTien" Mode="In" Type="Double" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Orders_Update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="TenKhachHang" Mode="In" Type="String" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="GhiChu" Mode="In" Type="String" />
+            <Parameter Name="TongTien" Mode="In" Type="Double" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="products_Active">
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Products_add">
+            <Parameter Name="id_item" Mode="In" Type="Int32" />
+            <Parameter Name="pname" Mode="In" Type="String" />
+            <Parameter Name="pmota" Mode="In" Type="String" />
+            <Parameter Name="pchitiet" Mode="In" Type="String" />
+            <Parameter Name="ppricecurrent" Mode="In" Type="Double" />
+            <Parameter Name="ppriceold" Mode="In" Type="Double" />
+            <Parameter Name="pimage" Mode="In" Type="String" />
+            <Parameter Name="pnew" Mode="In" Type="Boolean" />
+            <Parameter Name="pkhuyenmai" Mode="In" Type="Boolean" />
+            <Parameter Name="phot" Mode="In" Type="Boolean" />
+            <Parameter Name="pngaydang" Mode="In" Type="String" />
+            <Parameter Name="active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Products_count" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="Products_Del_pro">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Products_Get_By_DanhMucCha" ReturnType="Collection(FlowerShopModel.Products_Get_By_DanhMucCha_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="products_GetAll" ReturnType="Collection(FlowerShopModel.products_GetAll_Result)" />
+          <FunctionImport Name="Products_Getby_option" ReturnType="Collection(FlowerShopModel.Products_Getby_option_Result)">
+            <Parameter Name="option" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Products_getdetail" ReturnType="Collection(FlowerShopModel.Products_getdetail_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Products_GetHot" />
+          <FunctionImport Name="Products_Getnameitem" ReturnType="Collection(FlowerShopModel.Products_Getnameitem_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Products_GetNew" />
+          <FunctionImport Name="Products_getpro" ReturnType="Collection(FlowerShopModel.Products_getpro_Result)" />
+          <FunctionImport Name="Products_Getpro_by" ReturnType="Collection(FlowerShopModel.Products_Getpro_by_Result)">
+            <Parameter Name="iditem" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Products_getpro_parent">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="quantity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Products_GetSaLe">
+            <Parameter Name="khuyenmai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="products_sanphamcungloai" ReturnType="Collection(FlowerShopModel.products_sanphamcungloai_Result)">
+            <Parameter Name="soluong" Mode="In" Type="Int32" />
+            <Parameter Name="iddanhmuc" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="products_TimKiem" ReturnType="Collection(FlowerShopModel.products_TimKiem_Result)">
+            <Parameter Name="key" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Products_update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id_item" Mode="In" Type="Int32" />
+            <Parameter Name="pname" Mode="In" Type="String" />
+            <Parameter Name="pmota" Mode="In" Type="String" />
+            <Parameter Name="pchitiet" Mode="In" Type="String" />
+            <Parameter Name="ppricecurrent" Mode="In" Type="Double" />
+            <Parameter Name="ppriceold" Mode="In" Type="Double" />
+            <Parameter Name="pimage" Mode="In" Type="String" />
+            <Parameter Name="pnew" Mode="In" Type="Boolean" />
+            <Parameter Name="pkhuyenmai" Mode="In" Type="Boolean" />
+            <Parameter Name="phot" Mode="In" Type="Boolean" />
+            <Parameter Name="pngaydang" Mode="In" Type="String" />
+            <Parameter Name="active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FlowerShopModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FlowerShopModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="TinTuc_Delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TinTuc_GetAll" ReturnType="Collection(FlowerShopModel.TinTuc_GetAll_Result)" />
+          <FunctionImport Name="TinTuc_GetById" ReturnType="Collection(FlowerShopModel.TinTuc_GetById_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TinTuc_Insert">
+            <Parameter Name="HinhDaiDien" Mode="In" Type="String" />
+            <Parameter Name="TieuDe" Mode="In" Type="String" />
+            <Parameter Name="TomTat" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+            <Parameter Name="NgayDang" Mode="In" Type="DateTime" />
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="TinTuc_Update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="HinhDaiDien" Mode="In" Type="String" />
+            <Parameter Name="TieuDe" Mode="In" Type="String" />
+            <Parameter Name="TomTat" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="users_add">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="fullname" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="birdthday" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="rolecode" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="users_checkmail" ReturnType="Collection(FlowerShopModel.users_checkmail_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="users_checkuser" ReturnType="Collection(FlowerShopModel.users_checkuser_Result)">
+            <Parameter Name="username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="users_Delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="users_doipass">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="users_getall" ReturnType="Collection(FlowerShopModel.users_getall_Result)" />
+          <FunctionImport Name="users_getbyid" ReturnType="Collection(FlowerShopModel.users_getbyid_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="users_Update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="fullname" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="birdthday" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="rolecode" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Parentid" Type="Int32" />
+          <Property Name="Names" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="No" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="FlowerShopModel.FK_Products_Items" FromRole="Category" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Noidung" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <NavigationProperty Name="Orders" Relationship="FlowerShopModel.FK_Orders_contact" FromRole="Contact" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Orderdetail">
+          <Key>
+            <PropertyRef Name="Orderid" />
+            <PropertyRef Name="ProductsId" />
+          </Key>
+          <Property Name="Orderid" Type="Int32" Nullable="false" />
+          <Property Name="ProductsId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="SoLuong" Type="Int32" />
+          <NavigationProperty Name="Order" Relationship="FlowerShopModel.FK_Orderdetails_Orders" FromRole="Orderdetails" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="FlowerShopModel.FK_Orderdetails_Products" FromRole="Orderdetails" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomID" Type="Int32" />
+          <Property Name="Cus_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TongTien" Type="Double" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Contact" Relationship="FlowerShopModel.FK_Orders_contact" FromRole="Orders" ToRole="Contact" />
+          <NavigationProperty Name="Orderdetails" Relationship="FlowerShopModel.FK_Orderdetails_Orders" FromRole="Orders" ToRole="Orderdetails" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_item" Type="Int32" />
+          <Property Name="pName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="pDetail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pDescriptions" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="pPricecurrent" Type="Double" />
+          <Property Name="pPriceold" Type="Double" />
+          <Property Name="pImage" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pNew" Type="Boolean" />
+          <Property Name="pPromotion" Type="Boolean" />
+          <Property Name="pHot" Type="Boolean" />
+          <Property Name="pModify" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="Category" Relationship="FlowerShopModel.FK_Products_Items" FromRole="Products" ToRole="Category" />
+          <NavigationProperty Name="Orderdetails" Relationship="FlowerShopModel.FK_Orderdetails_Products" FromRole="Products" ToRole="Orderdetails" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="HinhDaiDien" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="TomTat" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NgayDang" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TrangThai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Fullname" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Birdthday" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rolecode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="View_DonHang">
+          <Key>
+            <PropertyRef Name="orderid" />
+            <PropertyRef Name="ProductsId" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="orderid" Type="Int32" Nullable="false" />
+          <Property Name="ProductsId" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TongTien" Type="Double" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_Products_Items">
+          <End Role="Category" Type="FlowerShopModel.Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="FlowerShopModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="id_item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_contact">
+          <End Role="Contact" Type="FlowerShopModel.Contact" Multiplicity="0..1" />
+          <End Role="Orders" Type="FlowerShopModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orderdetails_Orders">
+          <End Role="Orders" Type="FlowerShopModel.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orderdetails" Type="FlowerShopModel.Orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orderdetails">
+              <PropertyRef Name="Orderid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orderdetails_Products">
+          <End Role="Products" Type="FlowerShopModel.Product" Multiplicity="1" />
+          <End Role="Orderdetails" Type="FlowerShopModel.Orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orderdetails">
+              <PropertyRef Name="ProductsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="category_get_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="parentid" Nullable="true" />
+          <Property Type="String" Name="names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="no" Nullable="true" />
+          <Property Type="Boolean" Name="active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="category_getall_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="parentid" Nullable="true" />
+          <Property Type="String" Name="names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="no" Nullable="true" />
+          <Property Type="Boolean" Name="active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="category_GetDanhMucCon_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="Parentid" Nullable="true" />
+          <Property Type="String" Name="Names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="No" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="contact_getall_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Noidung" Nullable="true" MaxLength="2000" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="contact_GetXuLy_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Noidung" Nullable="true" MaxLength="2000" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getchild_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="Parentid" Nullable="true" />
+          <Property Type="String" Name="Names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="No" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getparent_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="Parentid" Nullable="true" />
+          <Property Type="String" Name="Names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="No" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Orderdetails_GetById_Result">
+          <Property Type="Int32" Name="Orderid" Nullable="false" />
+          <Property Type="Int32" Name="ProductsId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Orders_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="CustomID" Nullable="true" />
+          <Property Type="String" Name="Cus_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Note" Nullable="true" />
+          <Property Type="Double" Name="TongTien" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Orders_GetById_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="CustomID" Nullable="true" />
+          <Property Type="String" Name="Cus_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Note" Nullable="true" />
+          <Property Type="Double" Name="TongTien" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Orders_GetTrangThai_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="CustomID" Nullable="true" />
+          <Property Type="String" Name="Cus_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Note" Nullable="true" />
+          <Property Type="Double" Name="TongTien" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_Get_By_DanhMucCha_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="Int32" Name="parentid" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="products_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_Getby_option_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_getdetail_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_Getnameitem_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="Parentid" Nullable="true" />
+          <Property Type="String" Name="Names" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="No" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="Int32" Name="id1" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_getpro_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Products_Getpro_by_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="products_sanphamcungloai_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="products_TimKiem_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_item" Nullable="true" />
+          <Property Type="String" Name="pName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pDetail" Nullable="true" />
+          <Property Type="String" Name="pDescriptions" Nullable="true" MaxLength="500" />
+          <Property Type="Double" Name="pPricecurrent" Nullable="true" />
+          <Property Type="Double" Name="pPriceold" Nullable="true" />
+          <Property Type="String" Name="pImage" Nullable="true" />
+          <Property Type="Boolean" Name="pNew" Nullable="true" />
+          <Property Type="Boolean" Name="pPromotion" Nullable="true" />
+          <Property Type="Boolean" Name="pHot" Nullable="true" />
+          <Property Type="String" Name="pModify" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TinTuc_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="HinhDaiDien" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TieuDe" Nullable="false" MaxLength="300" />
+          <Property Type="String" Name="TomTat" Nullable="false" />
+          <Property Type="String" Name="NoiDung" Nullable="false" />
+          <Property Type="DateTime" Name="NgayDang" Nullable="false" Precision="16" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TinTuc_GetById_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="HinhDaiDien" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TieuDe" Nullable="false" MaxLength="300" />
+          <Property Type="String" Name="TomTat" Nullable="false" />
+          <Property Type="String" Name="NoiDung" Nullable="false" />
+          <Property Type="DateTime" Name="NgayDang" Nullable="false" Precision="16" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="users_checkmail_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Fullname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Birdthday" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Rolecode" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="users_checkuser_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Fullname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Birdthday" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Rolecode" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="users_getall_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Fullname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Birdthday" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Rolecode" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="users_getbyid_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Fullname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Birdthday" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Rolecode" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FlowerShopModelStoreContainer" CdmEntityContainer="FlowerShopEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="FlowerShopModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Parentid" ColumnName="Parentid" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="FlowerShopModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orderdetails">
+            <EntityTypeMapping TypeName="FlowerShopModel.Orderdetail">
+              <MappingFragment StoreEntitySet="Orderdetails">
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+                <ScalarProperty Name="ProductsId" ColumnName="ProductsId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="FlowerShopModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomID" ColumnName="CustomID" />
+                <ScalarProperty Name="Cus_Name" ColumnName="Cus_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="FlowerShopModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FlowerShopModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TinTucs">
+            <EntityTypeMapping TypeName="FlowerShopModel.TinTuc">
+              <MappingFragment StoreEntitySet="TinTuc">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="HinhDaiDien" ColumnName="HinhDaiDien" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="TomTat" ColumnName="TomTat" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="FlowerShopModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birdthday" ColumnName="Birdthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rolecode" ColumnName="Rolecode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_DonHang">
+            <EntityTypeMapping TypeName="FlowerShopModel.View_DonHang">
+              <MappingFragment StoreEntitySet="View_DonHang">
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+                <ScalarProperty Name="ProductsId" ColumnName="ProductsId" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="category_add" FunctionName="FlowerShopModel.Store.category_add" />
+          <FunctionImportMapping FunctionImportName="category_delete" FunctionName="FlowerShopModel.Store.category_delete" />
+          <FunctionImportMapping FunctionImportName="category_get" FunctionName="FlowerShopModel.Store.category_get">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.category_get_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="parentid" ColumnName="parentid" />
+                <ScalarProperty Name="names" ColumnName="names" />
+                <ScalarProperty Name="no" ColumnName="no" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="category_getall" FunctionName="FlowerShopModel.Store.category_getall">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.category_getall_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="parentid" ColumnName="parentid" />
+                <ScalarProperty Name="names" ColumnName="names" />
+                <ScalarProperty Name="no" ColumnName="no" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="category_GetDanhMucCon" FunctionName="FlowerShopModel.Store.category_GetDanhMucCon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.category_GetDanhMucCon_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Parentid" ColumnName="Parentid" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="category_update" FunctionName="FlowerShopModel.Store.category_update" />
+          <FunctionImportMapping FunctionImportName="category_update_TrangThai" FunctionName="FlowerShopModel.Store.category_update_TrangThai" />
+          <FunctionImportMapping FunctionImportName="changepass" FunctionName="FlowerShopModel.Store.changepass" />
+          <FunctionImportMapping FunctionImportName="contact_add" FunctionName="FlowerShopModel.Store.contact_add" />
+          <FunctionImportMapping FunctionImportName="contact_delete" FunctionName="FlowerShopModel.Store.contact_delete" />
+          <FunctionImportMapping FunctionImportName="contact_get" FunctionName="FlowerShopModel.Store.contact_get" />
+          <FunctionImportMapping FunctionImportName="contact_getall" FunctionName="FlowerShopModel.Store.contact_getall">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.contact_getall_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="contact_GetXuLy" FunctionName="FlowerShopModel.Store.contact_GetXuLy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.contact_GetXuLy_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="contact_update" FunctionName="FlowerShopModel.Store.contact_update" />
+          <FunctionImportMapping FunctionImportName="getchild" FunctionName="FlowerShopModel.Store.getchild">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.getchild_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Parentid" ColumnName="Parentid" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getparent" FunctionName="FlowerShopModel.Store.getparent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.getparent_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Parentid" ColumnName="Parentid" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="menu" FunctionName="FlowerShopModel.Store.menu" />
+          <FunctionImportMapping FunctionImportName="Orderdetails_Delete" FunctionName="FlowerShopModel.Store.Orderdetails_Delete" />
+          <FunctionImportMapping FunctionImportName="Orderdetails_GetById" FunctionName="FlowerShopModel.Store.Orderdetails_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Orderdetails_GetById_Result">
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+                <ScalarProperty Name="ProductsId" ColumnName="ProductsId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Orderdetails_Insert" FunctionName="FlowerShopModel.Store.Orderdetails_Insert" />
+          <FunctionImportMapping FunctionImportName="Orderdetails_Update" FunctionName="FlowerShopModel.Store.Orderdetails_Update" />
+          <FunctionImportMapping FunctionImportName="Orders_Delete" FunctionName="FlowerShopModel.Store.Orders_Delete" />
+          <FunctionImportMapping FunctionImportName="Orders_GetAll" FunctionName="FlowerShopModel.Store.Orders_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Orders_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomID" ColumnName="CustomID" />
+                <ScalarProperty Name="Cus_Name" ColumnName="Cus_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Orders_GetById" FunctionName="FlowerShopModel.Store.Orders_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Orders_GetById_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomID" ColumnName="CustomID" />
+                <ScalarProperty Name="Cus_Name" ColumnName="Cus_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Orders_GetTrangThai" FunctionName="FlowerShopModel.Store.Orders_GetTrangThai">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Orders_GetTrangThai_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomID" ColumnName="CustomID" />
+                <ScalarProperty Name="Cus_Name" ColumnName="Cus_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Orders_Insert" FunctionName="FlowerShopModel.Store.Orders_Insert" />
+          <FunctionImportMapping FunctionImportName="Orders_Update" FunctionName="FlowerShopModel.Store.Orders_Update" />
+          <FunctionImportMapping FunctionImportName="products_Active" FunctionName="FlowerShopModel.Store.products_Active" />
+          <FunctionImportMapping FunctionImportName="Products_add" FunctionName="FlowerShopModel.Store.Products_add" />
+          <FunctionImportMapping FunctionImportName="Products_count" FunctionName="FlowerShopModel.Store.Products_count" />
+          <FunctionImportMapping FunctionImportName="Products_Del_pro" FunctionName="FlowerShopModel.Store.Products_Del_pro" />
+          <FunctionImportMapping FunctionImportName="Products_Get_By_DanhMucCha" FunctionName="FlowerShopModel.Store.Products_Get_By_DanhMucCha">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_Get_By_DanhMucCha_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="parentid" ColumnName="parentid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="products_GetAll" FunctionName="FlowerShopModel.Store.products_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.products_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_Getby_option" FunctionName="FlowerShopModel.Store.Products_Getby_option">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_Getby_option_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_getdetail" FunctionName="FlowerShopModel.Store.Products_getdetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_getdetail_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_GetHot" FunctionName="FlowerShopModel.Store.Products_GetHot" />
+          <FunctionImportMapping FunctionImportName="Products_Getnameitem" FunctionName="FlowerShopModel.Store.Products_Getnameitem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_Getnameitem_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Parentid" ColumnName="Parentid" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="id1" ColumnName="id1" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active1" ColumnName="Active1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_GetNew" FunctionName="FlowerShopModel.Store.Products_GetNew" />
+          <FunctionImportMapping FunctionImportName="Products_getpro" FunctionName="FlowerShopModel.Store.Products_getpro">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_getpro_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_Getpro_by" FunctionName="FlowerShopModel.Store.Products_Getpro_by">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.Products_Getpro_by_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_getpro_parent" FunctionName="FlowerShopModel.Store.Products_getpro_parent" />
+          <FunctionImportMapping FunctionImportName="Products_GetSaLe" FunctionName="FlowerShopModel.Store.Products_GetSaLe" />
+          <FunctionImportMapping FunctionImportName="products_sanphamcungloai" FunctionName="FlowerShopModel.Store.products_sanphamcungloai">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.products_sanphamcungloai_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="products_TimKiem" FunctionName="FlowerShopModel.Store.products_TimKiem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.products_TimKiem_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pDetail" ColumnName="pDetail" />
+                <ScalarProperty Name="pDescriptions" ColumnName="pDescriptions" />
+                <ScalarProperty Name="pPricecurrent" ColumnName="pPricecurrent" />
+                <ScalarProperty Name="pPriceold" ColumnName="pPriceold" />
+                <ScalarProperty Name="pImage" ColumnName="pImage" />
+                <ScalarProperty Name="pNew" ColumnName="pNew" />
+                <ScalarProperty Name="pPromotion" ColumnName="pPromotion" />
+                <ScalarProperty Name="pHot" ColumnName="pHot" />
+                <ScalarProperty Name="pModify" ColumnName="pModify" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Products_update" FunctionName="FlowerShopModel.Store.Products_update" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FlowerShopModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FlowerShopModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FlowerShopModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FlowerShopModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FlowerShopModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FlowerShopModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FlowerShopModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="TinTuc_Delete" FunctionName="FlowerShopModel.Store.TinTuc_Delete" />
+          <FunctionImportMapping FunctionImportName="TinTuc_GetAll" FunctionName="FlowerShopModel.Store.TinTuc_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.TinTuc_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="HinhDaiDien" ColumnName="HinhDaiDien" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="TomTat" ColumnName="TomTat" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TinTuc_GetById" FunctionName="FlowerShopModel.Store.TinTuc_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.TinTuc_GetById_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="HinhDaiDien" ColumnName="HinhDaiDien" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="TomTat" ColumnName="TomTat" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TinTuc_Insert" FunctionName="FlowerShopModel.Store.TinTuc_Insert" />
+          <FunctionImportMapping FunctionImportName="TinTuc_Update" FunctionName="FlowerShopModel.Store.TinTuc_Update" />
+          <FunctionImportMapping FunctionImportName="users_add" FunctionName="FlowerShopModel.Store.users_add" />
+          <FunctionImportMapping FunctionImportName="users_checkmail" FunctionName="FlowerShopModel.Store.users_checkmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.users_checkmail_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birdthday" ColumnName="Birdthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rolecode" ColumnName="Rolecode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="users_checkuser" FunctionName="FlowerShopModel.Store.users_checkuser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.users_checkuser_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birdthday" ColumnName="Birdthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rolecode" ColumnName="Rolecode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="users_Delete" FunctionName="FlowerShopModel.Store.users_Delete" />
+          <FunctionImportMapping FunctionImportName="users_doipass" FunctionName="FlowerShopModel.Store.users_doipass" />
+          <FunctionImportMapping FunctionImportName="users_getall" FunctionName="FlowerShopModel.Store.users_getall">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.users_getall_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birdthday" ColumnName="Birdthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rolecode" ColumnName="Rolecode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="users_getbyid" FunctionName="FlowerShopModel.Store.users_getbyid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlowerShopModel.users_getbyid_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Birdthday" ColumnName="Birdthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rolecode" ColumnName="Rolecode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="users_Update" FunctionName="FlowerShopModel.Store.users_Update" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+
+/* Block leoproducttabs */
+#leoproducttabs{
+	position: relative;
+	border-top: 5px solid #DDDDDD;
+}
+	#productTabs {
+		border: 0;
+		background-color: #f8f8f8;
+	}
+	#productTabs > li {
+		z-index: 99;
+		position: relative;
+	}
+	#productTabs > li > a {
+		border: medium none;
+    	border-radius: 0 0 0 0;
+    	font-size: 15px;
+    	color: #747676;
+	}
+
+
+	#productTabs > li > a:hover,
+	#productTabs > li.active > a {
+		background: none;
+	}
+	#productTabsContent{
+		padding:0 2%;
+	}
+	#leoproducttabs #leo-carousel-control {
+		
+	}
+	#leoproducttabs #leo-carousel-control .carousel-control.right {
+		float:right;
+	}
+.blocleokproducttabs .carousel-control{
+	z-index:10
+}

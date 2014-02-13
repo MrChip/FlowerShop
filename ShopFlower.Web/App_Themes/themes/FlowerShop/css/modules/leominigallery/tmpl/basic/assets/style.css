@@ -1,0 +1,32 @@
+/**
+* Styles for basic layout
+*/
+.lof_thumbnail_container {
+    float: left;
+}
+.lof_thumbnail_container h4 {
+    color: #2B2B2B;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+ul.lof_thumblist {
+    float: left;
+    padding: 4px;
+}
+ul.lof_thumblist li {
+    float: left;
+    margin: 1px;
+}
+ul.lof_thumblist li:nth-child(3n+1){
+	clear: both;
+} 
+.lof_thumbnail_container .block_content {
+    float: left;
+}
+
+/* THEME STYLE */
+
+/* ---------- Light ------------- */
+

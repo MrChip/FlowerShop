@@ -1,0 +1,14 @@
+/* Block manufacturer */
+.blockmanufacturer li.last {	border:none;}
+	.blockmanufacturer li a {
+		display:block;
+	}
+
+
+.blockmanufacturer form {margin-top:10px;}
+
+#right_column .block_content select
+{
+	margin: 0 5%;
+    width: 90%;
+}

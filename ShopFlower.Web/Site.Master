@@ -1,0 +1,982 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="FlowerShop.Site1" %>
+
+<%@ Register Src="uc/MainMenu.ascx" TagName="MainMenu" TagPrefix="uc1" %>
+<%@ Register Src="uc/Menu_Left.ascx" TagName="Menu_Left" TagPrefix="uc2" %>
+<%@ Register Src="uc/Slide.ascx" TagName="Slide" TagPrefix="uc3" %>
+<%@ Register Src="uc/menu_footer.ascx" TagName="menu_footer" TagPrefix="uc4" %>
+<%@ Register Src="uc/header.ascx" TagName="header" TagPrefix="uc5" %>
+<%@ Register Src="uc/HeaderUser.ascx" TagName="HeaderUser" TagPrefix="uc6" %>
+<%@ Register Src="uc/HeaderRight.ascx" TagName="HeaderRight" TagPrefix="uc7" %>
+<%@ Register Src="uc/FooterBottom.ascx" TagName="FooterBottom" TagPrefix="uc8" %>
+<%@ Register Src="uc/LofAdvaFooter.ascx" TagName="lofadvafooter" TagPrefix="uc9" %>
+<%@ Register Src="uc/TopNavigation.ascx" TagName="topNavigation" TagPrefix="uc10" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 " lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js ie9" lang="en"> <![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>MrChip Flower Store</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta name="description" content="Shop powered by MrChip" />
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-br-de-es-fr-id-it-nl-pl-ru" />
+    <meta name="generator" content="MrChip" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/App_Themes/themes/FlowerShop/images/favicon7664.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/App_Themes/themes/FlowerShop/images/favicon7664.ico" />
+
+    <link rel="stylesheet" type="text/css" href="App_Themes/themes/FlowerShop/css/bootstrap.css" />
+    <link href="App_Themes/themes/FlowerShop/css/global.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/carriercompare/style.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockcart/blockcart.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockcategories/blockcategories.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockcurrencies/blockcurrencies.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockuserinfo/blockuserinfo.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blocklanguages/blocklanguages.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockmanufacturer/blockmanufacturer.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockcms/blockcms.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blocktags/blocktags.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/js/jquery/plugins/autocomplete/jquery.autocomplete.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/product_list.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blocksearch/blocksearch.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blocknewsletter/blocknewsletter.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/info/assets/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/leobtslider/assets/styles.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/leobootstrapmenu/themes/default/assets/styles.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockleorelatedproducts/blockleorelatedproducts.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockwishlist/blockwishlist.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/productcomments/productcomments.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/modules/sendtoafriend/sendtoafriend.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/modules/leominigallery/assets/style.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/leominigallery/tmpl/basic/assets/style.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/modules/leominigallery/assets/css/prettyPhoto.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/lofadvancecustom/tmpl/default/assets/style.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/homefeatured/homefeatured.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockleoproducttabs/blockleoproducttabs.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockleosocial/blockleosocial.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockleospecial/blockleospecial.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/favoriteproducts/favoriteproducts.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link href="App_Themes/themes/FlowerShop/css/modules/blockviewed/blockviewed.css" rel="stylesheet" type="text/css"
+        media="all" />
+    <link rel="stylesheet" type="text/css" href="App_Themes/themes/FlowerShop/css/theme-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="App_Themes/themes/FlowerShop/css/bootstrap-responsive.css" />
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/jquery/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/jquery/jquery-migrate-1.2.1.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/jquery/plugins/jquery.easing.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/tools.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/modules/carriercompare/carriercompare.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/modules/blockcart/ajax-cart.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/tools/treeManagement.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/jquery/plugins/autocomplete/jquery.autocomplete.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/modules/leotempcp/bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/info/assets/form.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/modules/blockwishlist/js/ajax-wishlist.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/modules/leominigallery/assets/jquery.prettyPhoto.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/modules/favoriteproducts/favoriteproducts.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet'
+        type='text/css'>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/custom.js"></script>
+
+    <script type="text/javascript" src="App_Themes/themes/FlowerShop/js/jquery.cookie.js"></script>
+
+    <!--[if lt IE 9]>
+<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald" />
+    <style type="text/css">
+        h1, h2, h3, h4, .idTabs a, .mega-group .dropdown-toggle, .navbar .nav > li > a, #shopping_cart a, #productTabs > li > a, .price {
+            font-family: 'Oswald';
+        }
+    </style>
+    <script type='text/javascript'>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0)
+                {
+                    $("#noop-top").fadeIn()
+                }
+                else {
+                    $("#noop-top").fadeOut()
+                }
+            });
+            $("#noop-top").click(function () {
+                $("body,html").animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            })
+        });
+
+    </script>
+    <%--   <link href="App_Themes/themes/FlowerShop/js/jquery.autocomplete.css" rel="stylesheet"
+        type="text/css" />
+    <script src="App_Themes/themes/FlowerShop/Js/jquery.autocomplete.js" type="text/javascript"></script>--%>
+</head>
+<body id="index" class=" fs12">
+    <form id="form1" runat="server">
+        <div id="page" class="clearfix">
+            <!-- Header -->
+            <header id="header">
+				<section class="topbar">
+					<div class="container bg_white">
+					<!-- Block languages module -->
+
+                        <!-- block seach mobile -->
+                        <!-- Block search module TOP -->
+                        <div id="search_block_top" class="g-dropdown">
+	                        <div class="group dropdown">
+		                      
+		                        <form class="dropdown-menu" method="get" action="http://www.demo4leotheme.com/prestashop/leo_flowers/index.php?controller=search" id="searchbox">
+				                        <label for="search_query_top"><!-- image on background --></label>
+				                        <input type="hidden" name="controller" value="search" />
+				                        <input type="hidden" name="orderby" value="position" />
+				                        <input type="hidden" name="orderway" value="desc" />
+				                        <input class="search_query span2" type="text" id="search_query_top" name="search_query" value="" />
+				                        <input type="submit" name="submit_search" value="Search" class="button" />
+		                        </form>
+	                        </div>
+                        </div>
+	                        <script type="text/javascript">
+	                            // <![CDATA[
+	                            $('document').ready(function () {
+	                                $("#search_query_top")
+				                        .autocomplete(
+					                        'indexbd1a.html?controller=search', {
+					                            minChars: 3,
+					                            max: 10,
+					                            width: 500,
+					                            selectFirst: false,
+					                            scroll: false,
+					                            dataType: "json",
+					                            formatItem: function (data, i, max, value, term) {
+					                                return value;
+					                            },
+					                            parse: function (data) {
+					                                var mytab = new Array();
+					                                for (var i = 0; i < data.length; i++)
+					                                    mytab[mytab.length] = { data: data[i], value: data[i].cname + ' > ' + data[i].pname };
+					                                return mytab;
+					                            },
+					                            extraParams: {
+					                                ajaxSearch: 1,
+					                                id_lang: 1
+					                            }
+					                        }
+				                        )
+				                        .result(function (event, data, formatted) {
+				                            $('#search_query_top').val(data.pname);
+				                            document.location.href = data.product_link;
+				                        })
+	                            });
+	                            // ]]>
+	                        </script>
+
+                        <!-- /Block search module TOP -->
+
+                        <!-- Block user information module HEADER -->
+                        <div id="header_user" class=" pull-right">
+                             <%-- header--%>
+                            <uc6:HeaderUser ID="headerUser" runat="server" />
+                        </div>
+                        <!-- /Block user information module HEADER -->
+	
+					</div>
+				</section>
+				<section class="header">
+					<div class="container bg_white bg_stripes" >
+					<div class="row-fluid bg-dotline">
+						<div class="span4">
+							<a id="header_logo" href="index-2.html" title="Flowers store">
+								<img class="logo" src="/App_Themes/themes/FlowerShop/images/logo7664.jpg" alt="Flowers store"  />
+							</a>
+						</div>
+                        <div id="header_right" class="span8">
+							<uc7:HeaderRight ID="headerRight" runat="server" />
+						</div>
+											</div>
+					</div>
+				</section>	
+			</header>
+            <nav id="topnavigation">
+                <uc10:TopNavigation ID="topNavigation" runat="server" />
+			</nav>
+            <section id="slideshow" class="hidden-phone">
+				<div class="container bg_white">
+					<div class="row-fluid">
+						 <div id="leobttslider95" class="carousel slide leobttslider" style="max-width: 940px; margin: 0 auto;">
+	<div class="carousel-inner">
+					<div class="item active">
+									<a href="http://www.prestashop.com/"><img src="App_Themes/themes/FlowerShop/cache/cachefs/leobtslider/940_440_sample-3.jpg" alt="Flowers wallpapers" /></a>
+													<div class="slide-info">
+						<h2>Flowers wallpapers</h2>
+						<div class="leoslide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis fringilla nisi euismod Morbi sed adipiscing eleifend, dolor risus congue mi aliquet dolor tellus et ante. </div>
+					</div>
+							</div>
+					<div class="item">
+									<a href="http://www.prestashop.com/"><img src="App_Themes/themes/FlowerShop/cache/cachefs/leobtslider/940_440_sample-2.jpg" alt="Flowers wallpapers" /></a>
+													<div class="slide-info">
+						<h2>Flowers wallpapers</h2>
+						<div class="leoslide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis fringilla nisi euismod Morbi sed adipiscing eleifend, dolor risus congue mi aliquet dolor tellus et ante. </div>
+					</div>
+							</div>
+					<div class="item">
+									<a href="http://www.prestashop.com/"><img src="/App_Themes/themes/FlowerShop/cache/cachefs/leobtslider/940_440_sample-1.jpg" alt="Flowers wallpapers" /></a>
+													<div class="slide-info">
+						<h2>Flowers wallpapers</h2>
+						<div class="leoslide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis fringilla nisi euismod Morbi sed adipiscing eleifend, dolor risus congue mi aliquet dolor tellus et ante. </div>
+					</div>
+							</div>
+			</div>
+		<a class="carousel-control left" href="#leobttslider95" data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#leobttslider95" data-slide="next">&rsaquo;</a>
+	
+						<ol class="carousel-indicators">
+							<li data-target="#leobttslider95" data-slide-to="0" class="active"></li>
+							<li data-target="#leobttslider95" data-slide-to="1" class=""></li>
+							<li data-target="#leobttslider95" data-slide-to="2" class=""></li>
+						</ol>
+				
+</div>
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {"/App_Themes/themes/FlowerShop/ima
+        $('#leobttslider95').carousel({
+            interval: 3000
+        });
+    });
+
+</script>
+
+					</div>
+				</div>
+			</section>
+            <section id="promotetop">
+				<div class="container bg_white">
+					<div class="row-fluid">
+						 <!-- MODULE Block specials -->
+<div id="leoproducttabs" class="products_block exclusive blockleoproducttabs">
+	<div class="block_content row-fluid">			            
+			<ul id="productTabs" class="nav nav-tabs bg_stripes">
+			  	
+              <li >
+              		<a href="#tabfeaturedproducts" data-toggle="tab">Featured Products</a>
+              </li>
+			                 	
+              <li ><a href="#tabnewproducts" data-toggle="tab">New Arrivals</a></li>
+			  			  	
+              <li ><a href="#tabbestseller" data-toggle="tab">Best Seller</a></li>
+			  			              </ul>
+			
+            <div id="productTabsContent" class="tab-content">
+            	
+							  
+		              <div class="tab-pane " id="tabfeaturedproducts">
+							 							<div class=" carousel slide leocontrol" id="tabfeaturedproducts-carousel">
+	 	
+	<a class="carousel-control left" href="#tabfeaturedproducts-carousel"   data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#tabfeaturedproducts-carousel"  data-slide="next">&rsaquo;</a>
+		<div class="carousel-inner">
+				<div class="item active">
+												  <div class="row-fluid">
+								<div class="span3 product_block ajax_block_product first_item p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index9f8a.html?id_product=8&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Praesent a suscipit">
+									<img src="/App_Themes/themes/FlowerShop/images/p/2/7/27-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index9f8a.html?id_product=8&amp;controller=product&amp;id_lang=1" title="Praesent a suscipit">Praesent a suscipit</a></h3>
+								<div class="product_desc">Praesent a suscipit nulla. Cras id rhoncus elit. Aenean pretium fringilla nunc, eu volutpat leo lacinia eget</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-8" href="#" rel="8" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$30.00</span><br />										
+								</div>
+																																			<span class="exclusive"><span></span>Add to cart</span>
+																								</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexd368.html?id_product=10&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Nunc facilisis tortor">
+									<img src="/App_Themes/themes/FlowerShop/images/p/2/9/29-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexd368.html?id_product=10&amp;controller=product&amp;id_lang=1" title="Nunc facilisis tortor">Nunc facilisis tortor</a></h3>
+								<div class="product_desc">Fusce ultricies justo ut dignissim tristique. Vivamus id risus vel velit malesuada vulputate. Integer commodo fringilla mattis. Nunc laoreet leo erat, sed lobortis nibh posuere eget. Fusce porttitor at mi non dignissim. Sed ut quam ut lorem congue dignissim.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-10" href="#" rel="10" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$300.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_10" href="index8db3.html?controller=cart&amp;add=&amp;id_product=10&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index036e.html?id_product=12&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Quisque interdum">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/1/31-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index036e.html?id_product=12&amp;controller=product&amp;id_lang=1" title="Quisque interdum">Quisque interdum</a></h3>
+								<div class="product_desc"></div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-12" href="#" rel="12" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$180.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_12" href="index7176.html?controller=cart&amp;add=&amp;id_product=12&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product last_item alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index8cad.html?id_product=13&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Vestibulum lacinia">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/2/32-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index8cad.html?id_product=13&amp;controller=product&amp;id_lang=1" title="Vestibulum lacinia">Vestibulum lacinia</a></h3>
+								<div class="product_desc">Duis viverra porttitor ante, ac fermentum dolor vestibulum sed. Morbi at quam ultricies, convallis metus id, pulvinar ligula. Etiam ac condimentum elit. Pellentesque sed sapien nec erat semper convallis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-13" href="#" rel="13" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$180.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_13" href="index5fb3.html?controller=cart&amp;add=&amp;id_product=13&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									</div>
+									
+						</div>		
+			<div class="item ">
+												  <div class="row-fluid">
+								<div class="span3 product_block ajax_block_product first_item p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index0a93.html?id_product=14&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Suspendisse luctus">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/3/33-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index0a93.html?id_product=14&amp;controller=product&amp;id_lang=1" title="Suspendisse luctus">Suspendisse luctus</a></h3>
+								<div class="product_desc">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vitae faucibus libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum elit a lacus mattis, ac porttitor libero malesuada.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-14" href="#" rel="14" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$90.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_14" href="index07ee.html?controller=cart&amp;add=&amp;id_product=14&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexc5e8.html?id_product=15&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Phasellus vulputate">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/4/34-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexc5e8.html?id_product=15&amp;controller=product&amp;id_lang=1" title="Phasellus vulputate">Phasellus vulputate</a></h3>
+								<div class="product_desc"></div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-15" href="#" rel="15" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$160.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_15" href="indexc42e.html?controller=cart&amp;add=&amp;id_product=15&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index9fe2.html?id_product=17&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Nam luctus ultrices">
+									<img src="/App_Themes/themes/FlowerShop/images/p/4/0/40-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index9fe2.html?id_product=17&amp;controller=product&amp;id_lang=1" title="Nam luctus ultrices">Nam luctus ultrices</a></h3>
+								<div class="product_desc"></div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-17" href="#" rel="17" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_17" href="index4478.html?controller=cart&amp;add=&amp;id_product=17&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product last_item alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexa0b9.html?id_product=18&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Nunc lorem enim">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/9/39-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexa0b9.html?id_product=18&amp;controller=product&amp;id_lang=1" title="Nunc lorem enim">Nunc lorem enim</a></h3>
+								<div class="product_desc">Duis ullamcorper, risus id egestas molestie, eros arcu rutrum nisi, vel sagittis orci leo id justo. Vestibulum pellentesque velit at enim porttitor, vitae mollis turpis consectetur. Nunc lorem enim, semper id aliquet vel, tempus eget neque. Quisque iaculis tincidunt venenatis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-18" href="#" rel="18" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_18" href="index1410.html?controller=cart&amp;add=&amp;id_product=18&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									</div>
+									
+						</div>		
+		</div>
+</div>
+
+		              </div>   
+									  
+				  			  
+	            	 <div class="tab-pane " id="tabnewproducts">
+						 						<div class=" carousel slide leocontrol" id="tabnewproducts-carousel">
+	 	
+	<a class="carousel-control left" href="#tabnewproducts-carousel"   data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#tabnewproducts-carousel"  data-slide="next">&rsaquo;</a>
+		<div class="carousel-inner">
+				<div class="item active">
+												  <div class="row-fluid">
+								<div class="span3 product_block ajax_block_product first_item p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index4c0f.html?id_product=20&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Duis ullamcorper">
+									<img src="/App_Themes/themes/FlowerShop/images/p/4/2/42-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index4c0f.html?id_product=20&amp;controller=product&amp;id_lang=1" title="Duis ullamcorper">Duis ullamcorper</a></h3>
+								<div class="product_desc">Duis ullamcorper, risus id egestas molestie, eros arcu rutrum nisi, vel sagittis orci leo id justo. Vestibulum pellentesque velit at enim porttitor, vitae mollis turpis consectetur. Nunc lorem enim, semper id aliquet vel, tempus eget neque. Quisque iaculis tincidunt venenatis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-20" href="#" rel="20" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_20" href="index2fc4.html?controller=cart&amp;add=&amp;id_product=20&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexbf68.html?id_product=19&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Duis ullamcorper">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/8/38-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexbf68.html?id_product=19&amp;controller=product&amp;id_lang=1" title="Duis ullamcorper">Duis ullamcorper</a></h3>
+								<div class="product_desc">Duis ullamcorper, risus id egestas molestie, eros arcu rutrum nisi, vel sagittis orci leo id justo. Vestibulum pellentesque velit at enim porttitor, vitae mollis turpis consectetur. Nunc lorem enim, semper id aliquet vel, tempus eget neque. Quisque iaculis tincidunt venenatis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-19" href="#" rel="19" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_19" href="index9ef5.html?controller=cart&amp;add=&amp;id_product=19&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexa0b9.html?id_product=18&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Nunc lorem enim">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/9/39-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexa0b9.html?id_product=18&amp;controller=product&amp;id_lang=1" title="Nunc lorem enim">Nunc lorem enim</a></h3>
+								<div class="product_desc">Duis ullamcorper, risus id egestas molestie, eros arcu rutrum nisi, vel sagittis orci leo id justo. Vestibulum pellentesque velit at enim porttitor, vitae mollis turpis consectetur. Nunc lorem enim, semper id aliquet vel, tempus eget neque. Quisque iaculis tincidunt venenatis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-18" href="#" rel="18" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_18" href="index1410.html?controller=cart&amp;add=&amp;id_product=18&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product last_item alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index9fe2.html?id_product=17&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Nam luctus ultrices">
+									<img src="/App_Themes/themes/FlowerShop/images/p/4/0/40-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index9fe2.html?id_product=17&amp;controller=product&amp;id_lang=1" title="Nam luctus ultrices">Nam luctus ultrices</a></h3>
+								<div class="product_desc"></div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-17" href="#" rel="17" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_17" href="index4478.html?controller=cart&amp;add=&amp;id_product=17&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									</div>
+									
+						</div>		
+			<div class="item ">
+												  <div class="row-fluid">
+								<div class="span3 product_block ajax_block_product first_item p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index26a2.html?id_product=16&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Vestibulum tellus">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/5/35-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index26a2.html?id_product=16&amp;controller=product&amp;id_lang=1" title="Vestibulum tellus">Vestibulum tellus</a></h3>
+								<div class="product_desc">Fusce ultricies justo ut dignissim tristique. Vivamus id risus vel velit malesuada vulputate. Integer commodo fringilla mattis. Nunc laoreet leo erat, sed lobortis nibh posuere eget. Fusce porttitor at mi non dignissim. Sed ut quam ut lorem congue dignissim.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-16" href="#" rel="16" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$200.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_16" href="index1fce.html?controller=cart&amp;add=&amp;id_product=16&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="indexc5e8.html?id_product=15&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Phasellus vulputate">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/4/34-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="indexc5e8.html?id_product=15&amp;controller=product&amp;id_lang=1" title="Phasellus vulputate">Phasellus vulputate</a></h3>
+								<div class="product_desc"></div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-15" href="#" rel="15" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$160.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_15" href="indexc42e.html?controller=cart&amp;add=&amp;id_product=15&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product  p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index0a93.html?id_product=14&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Suspendisse luctus">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/3/33-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index0a93.html?id_product=14&amp;controller=product&amp;id_lang=1" title="Suspendisse luctus">Suspendisse luctus</a></h3>
+								<div class="product_desc">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vitae faucibus libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum elit a lacus mattis, ac porttitor libero malesuada.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-14" href="#" rel="14" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$90.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_14" href="index07ee.html?controller=cart&amp;add=&amp;id_product=14&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									
+												<div class="span3 product_block ajax_block_product last_item alternate_item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index8cad.html?id_product=13&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Vestibulum lacinia">
+									<img src="/App_Themes/themes/FlowerShop/images/p/3/2/32-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+								<span class="discount">Hot!</span>							</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index8cad.html?id_product=13&amp;controller=product&amp;id_lang=1" title="Vestibulum lacinia">Vestibulum lacinia</a></h3>
+								<div class="product_desc">Duis viverra porttitor ante, ac fermentum dolor vestibulum sed. Morbi at quam ultricies, convallis metus id, pulvinar ligula. Etiam ac condimentum elit. Pellentesque sed sapien nec erat semper convallis.</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-13" href="#" rel="13" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$180.00</span><br />										
+								</div>
+																																														<a class="button ajax_add_to_cart_button exclusiveexclusiveexclusive" rel="ajax_id_product_13" href="index5fb3.html?controller=cart&amp;add=&amp;id_product=13&amp;token=ce3f7a35ef7371fe956b5d42854f155b" title="Add to cart">Add to cart</a>
+																																		</div>
+						</div>
+				</div>
+				
+									</div>
+									
+						</div>		
+		</div>
+</div>
+
+	            	  </div>   
+						
+							  
+		              <div class="tab-pane " id="tabbestseller">
+							 							<div class=" carousel slide leocontrol" id="tabbestseller-carousel">
+	 	<div class="carousel-inner">
+				<div class="item active">
+												  <div class="row-fluid">
+								<div class="span3 product_block ajax_block_product first_item p-item clearfix">
+						<div class="product-container clearfix">
+							<div class="center_block">
+								<a href="index9f8a.html?id_product=8&amp;controller=product&amp;id_lang=1" class="product_img_link" title="Praesent a suscipit">
+									<img src="/App_Themes/themes/FlowerShop/images/p/2/7/27-home_default.jpg" alt="" />
+									<span class="new">New</span>								</a>
+															</div>
+							<div class="right_block">
+								<h3 class="s_title_block"><a href="index9f8a.html?id_product=8&amp;controller=product&amp;id_lang=1" title="Praesent a suscipit">Praesent a suscipit</a></h3>
+								<div class="product_desc">Praesent a suscipit nulla. Cras id rhoncus elit. Aenean pretium fringilla nunc, eu volutpat leo lacinia eget</div>									
+							</div>
+							<div class="left_block">
+								<a class="rating_box leo-rating-8" href="#" rel="8" style="display:none">
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>
+									<i class="icon-star-empty"></i>        
+								</a>
+																<div class="content_price">
+									<span class="price" style="display: inline;">$30.00</span><br />										
+								</div>
+																																			<span class="exclusive"><span></span>Add to cart</span>
+																								</div>
+						</div>
+				</div>
+				
+									</div>
+									
+						</div>		
+		</div>
+</div>
+
+		              </div>   
+						
+					 							 
+			</div>
+        
+		
+	</div>
+</div>
+<!-- /MODULE Block specials -->
+<script>
+    $(document).ready(function () {
+        $('.carousel').each(function () {
+            $(this).carousel({
+                pause: true,
+                interval: false
+            });
+        });
+        $(".blockleoproducttabs").each(function () {
+            $(".nav-tabs li", this).first().addClass("active");
+            $(".tab-content .tab-pane", this).first().addClass("active");
+        });
+    });
+</script>
+ 
+					</div>
+				</div>
+			</section>
+            <footer id="footer" class="wrapper-bg clearfix">
+				<section class="footer">
+					<div class="container bg_white">
+						<div class="row-fluid nice-columns">
+							<div style="clear:both"></div>
+<div id="lofadvafooterfooter" class="lofadvafooter">
+	<uc9:LofAdvaFooter ID="loadadvafooter" runat="server" />		
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        leoData = "";
+
+
+
+        //get category id
+        var leoCatList = "";
+        $("#categories_block_left .leo-qty").each(function () {
+            if (leoCatList) leoCatList += "," + $(this).attr("id");
+            else leoCatList = $(this).attr("id");
+        });
+
+        leoCatList = leoCatList.replace(/leo-cat-/g, "");
+        if (leoCatList) leoData = 'cat_list=' + leoCatList;
+
+
+
+        //get product id
+        var leoProduct = "";
+        var tmpPro = new Array();
+        $("a.rating_box").each(function (i) {
+            myrel = $(this).attr("rel");
+            if ($.inArray(myrel, tmpPro) == -1) {
+                tmpPro[i] = myrel;
+                if (leoProduct) leoProduct += "," + myrel;
+                else leoProduct = myrel;
+            }
+        });
+        if (leoProduct) {
+            if (leoData) leoData += "&";
+            leoData += 'pro_list=' + leoProduct;
+        }
+
+
+
+
+        $.ajax({
+            type: 'POST',
+            headers: { "cache-control": "no-cache" },
+            url: baseDir + 'modules/leocustomajax/leoajax.php' + '?rand=' + new Date().getTime(),
+            async: true,
+            cache: false,
+            dataType: "json",
+            data: leoData,
+            success: function (jsonData) {
+                if (jsonData) {
+                    if (jsonData.cat) {
+                        for (i = 0; i < jsonData.cat.length; i++) {
+                            $("#leo-cat-" + jsonData.cat[i].id_category).html(jsonData.cat[i].total);
+                            $("#leo-cat-" + jsonData.cat[i].id_category).show();
+                        }
+                    }
+                    if (jsonData.pro) {
+                        $("a.rating_box").show();
+                        for (i = 0; i < jsonData.pro.length; i++) {
+                            $(".leo-rating-" + jsonData.pro[i].id).show();
+                            $(".leo-rating-" + jsonData.pro[i].id).each(function (index) {
+                                $(this).find("i").each(function (index) {
+                                    if (index < jsonData.pro[i].rate) {
+                                        $(this).attr("class", "icon-star");
+                                    }
+                                });
+                            });
+                        }
+
+                    }
+                }
+            },
+            error: function () { }
+        });
+
+    });
+</script>
+
+
+							
+						</div>
+					</div>
+				</section>	
+				<section id="footer-bottom" class=" clearfix">
+				 <uc8:FooterBottom ID="FooterBottom" runat="server" />
+				</section>
+			</footer>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <div id="fb-root">
+    </div>
+    <script>        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <p style="display: block;" id="back-top">
+        <a href="#top"><span></span></a>
+    </p>
+</body>
+</html>
+</html>

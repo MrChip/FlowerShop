@@ -1,0 +1,67 @@
+/* Block newsletter */
+#newsletter_block_left {
+	float: left;
+}
+#newsletter_block_left h2 {
+	float:left;
+	margin-right: 10px;
+}
+#newsletter_block_left .input-append {
+	position: relative;
+	float:left;
+	margin: 0;
+}
+#newsletter_block_left 
+#newsletter_block_left p {padding:0;}
+.input-append
+{
+	position:relative;
+}
+#newsletter_block_left p.success_inline {
+	color: #418B19;
+	text-align: center;
+	font-weight: bold;
+}
+#newsletter_block_left p.warning_inline {
+	color: #DA0F00;
+	text-align: center;
+	font-weight: bold;
+}
+*:first-child+html #newsletter_block_left input.inputNew {position:static;}/* hack ie 7 */
+#newsletter_block_left .title
+{
+}
+#newsletter_block_left .btn
+{
+	padding:0 7px;
+	height:30px;
+	line-height:17px !important;
+	background: none repeat scroll 0 0 #EA628D;
+	border-color:#EA628D;
+	box-shadow: none;
+	font-size: 13px;
+	text-shadow: inherit;
+	margin:0;
+	border-radius: 0 3px 3px 0;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#newsletter_block_left .inputNew
+{	
+	background: none repeat scroll 0 0 #fff;
+    border-color: #fff;
+    height: 30px !important;
+    line-height: 24px !important;
+    padding: 0 6px;
+	margin: 0;
+	box-shadow: none;
+	float:left;
+}
+*:first-child+html #newsletter_block_left input.btn{padding-left:24px !important; min-height:25px !important;}/* hack ie 7 */
+
+/*\*//*/div.madiv {
+#newsletter_block_left input.button_mini {
+	position:relative;
+	top: 4px;
+}/* hack ie 8 */
+}/* */

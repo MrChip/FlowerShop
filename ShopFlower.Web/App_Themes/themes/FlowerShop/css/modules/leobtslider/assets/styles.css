@@ -1,0 +1,118 @@
+.leobttslider {
+	position:relative;
+	margin-bottom: 0
+}
+.leobttslider .carousel-inner{
+	position:relative;
+	margin-bottom: 0
+}
+.leobttslider .banner-info{
+	background:url(images/bg-slider.png);
+	color: #FFFFFF;
+    line-height: 18px;
+    min-height: 100px;
+    padding: 15px;
+    position: absolute;
+    right: 45px;
+    text-align: center;
+    bottom: 55px;
+    width: 225px;
+    z-index: 7;
+}
+.banner-info h1 {
+	color: #fff;
+	text-transform: uppercase;
+	margin: 15px 0;
+}
+.banner-info a.bnt{
+	border: 3px solid #e1596c;
+	color: #45a5a5;
+	background: #fff;
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 0 22px ;
+	 line-height: 35px;
+	 display: inline-block;
+	 margin: 20px 0 10px;
+	 font-family: "lora",arial;
+	 font-size: 13px;
+	 font-weight: 700;
+	}
+
+
+.leobttslider .carousel-indicators{
+	bottom: 30px;
+    left: 15px;
+    top: inherit;
+}
+.leobttslider .carousel-indicators li{ 
+	display:block;
+	float:left;	
+	z-index:20;
+	padding: 3px;; 
+	border-radius: 0;	
+	padding: 0;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.leobttslider .carousel-indicators li:hover,
+.leobttslider .carousel-indicators li.active{ 
+	background: url(images/bullets-blue-bg.png) left top;
+}	
+.leobttslider .carousel-indicators li {
+	background: url(images/bullets-blue-bg.png) left bottom;
+}
+.leobttslider  .thumb-indicators li {text-indent:0; 
+   display: block;
+    float: left;
+    height: auto;
+    margin: 10px 0 10px 8px;
+    padding: 0;
+    text-indent: 0;
+    width: auto;
+    z-index: 20;
+}
+.leobttslider .slide-info {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	width: 40%;
+}
+.leobttslider .leoslide-description {
+	color:#8C8D8D;
+	font-size: 13px;
+	line-height: 22px;
+}
+.leobttslider .slide-info h2 {
+	font-size: 42px;
+    line-height: 46px;
+}
+#slideshow .carousel-control {
+	display: none;
+}
+#slideshow .leobttslider:hover .carousel-control {display: block}
+#slideshow .carousel-control {
+	background: url("images/arrow-control.png") left top no-repeat;
+	height: 46px;
+	width: 46px;
+	top: 170px;
+	border:0;
+	text-indent: -9999px;
+	opacity: 1;
+	
+}
+#slideshow .carousel-control.left {
+	background-position: left -2px;
+    left: -24px;
+}
+#slideshow .leobttslider .carousel-control.left:hover {
+	background-position: left -63px;
+}
+#slideshow .carousel-control.right {
+	background-position: right -2px;
+	right: -24px;
+}
+#slideshow .carousel-control.right:hover{
+	background-position: right -63px;
+} 
